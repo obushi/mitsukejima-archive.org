@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>利用規約 | 見附島アーカイブ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="media/logo.svg" alt="" aria-hidden="true">
+          <span class="brand-text" data-i18n="brand">見附島アーカイブ</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="index.html#about" data-i18n="navAbout">見附島について</a>
+          <a href="index.html#damage" data-i18n="navDamage">被害を知る</a>
+          <a href="index.html#timelapse" data-i18n="navPhoto">タイムラプス作成</a>
+          <a href="index.html#models" data-i18n="nav3d">3Dモデル</a>
+        </nav>
+        <div class="language-switcher">
+          <span class="globe-icon" aria-hidden="true">🌐</span>
+          <label class="sr-only" for="language-select">言語</label>
+          <select id="language-select" aria-label="Language">
+            <option value="ja" selected>日本語</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-section terms">
+        <div class="section-inner">
+          <h1 data-i18n="termsTitle">利用規約</h1>
+          <p data-i18n="termsBody">
+            本アーカイブに掲載されている写真、映像、3Dモデルなどの著作物を無断で複製・配布・改変することを禁じます。利用に関するお問い合わせはプロジェクトチームまでご連絡ください。
+          </p>
+          <p class="terms-back"><a href="index.html" data-i18n="termsBack">トップページに戻る</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span data-i18n="footerCopyright">© 2024 見附島アーカイブ</span>
+        <a href="terms.html" data-i18n="footerTerms">利用規約</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
