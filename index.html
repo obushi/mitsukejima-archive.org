@@ -93,8 +93,8 @@
               value="50"
               data-i18n-aria="comparisonAria"
               aria-label="スライダーで画像や映像を比較">
-            <span class="comparison-label comparison-label--before" data-i18n="photoBeforeLabel">被災前</span>
-            <span class="comparison-label comparison-label--after" data-i18n="photoAfterLabel">被災後</span>
+            <span class="comparison-label comparison-label--before" data-i18n="damageVideoBeforeLabel">2025年5月26日撮影</span>
+            <span class="comparison-label comparison-label--after" data-i18n="damageVideoAfterLabel">2025年8月13日撮影</span>
           </div>
         </div>
       </section>
@@ -107,13 +107,23 @@
           </p>
           <div class="comparison" data-comparison>
             <div class="comparison-visual">
+              <img class="comparison-layer comparison-layer--after" src="media/timelapse-front-after.jpg" alt="被災後の見附島の稜線を撮影した写真" data-i18n-alt="timelapseRidgeAfterAlt">
+              <img class="comparison-layer comparison-layer--before" src="media/timelapse-front-before.jpg" alt="被災前の見附島の稜線を撮影した写真" data-i18n-alt="timelapseRidgeBeforeAlt">
+              <div class="comparison-handle" aria-hidden="true"></div>
+            </div>
+            <input class="comparison-input" type="range" min="0" max="100" value="50" data-i18n-aria="comparisonAria" aria-label="スライダーで画像を比較">
+            <span class="comparison-label comparison-label--before" data-i18n="timelapseRidgeBeforeLabel">2024年2月4日撮影</span>
+            <span class="comparison-label comparison-label--after" data-i18n="timelapseRidgeAfterLabel">2025年8月13日撮影</span>
+          </div>
+          <div class="comparison" data-comparison>
+            <div class="comparison-visual">
               <img class="comparison-layer comparison-layer--after" src="media/timelapse-after.jpg" alt="被災後の見附島を撮影した写真" data-i18n-alt="timelapseAfterAlt">
               <img class="comparison-layer comparison-layer--before" src="media/timelapse-before.jpg" alt="被災前の見附島を撮影した写真" data-i18n-alt="timelapseBeforeAlt">
               <div class="comparison-handle" aria-hidden="true"></div>
             </div>
             <input class="comparison-input" type="range" min="0" max="100" value="50" data-i18n-aria="comparisonAria" aria-label="スライダーで画像を比較">
-            <span class="comparison-label comparison-label--before" data-i18n="photoBeforeLabel">被災前</span>
-            <span class="comparison-label comparison-label--after" data-i18n="photoAfterLabel">被災後</span>
+            <span class="comparison-label comparison-label--before" data-i18n="timelapseShoreBeforeLabel">2022年6月20日撮影</span>
+            <span class="comparison-label comparison-label--after" data-i18n="timelapseShoreAfterLabel">2025年8月13日撮影</span>
           </div>
         </div>
       </section>
@@ -125,18 +135,30 @@
             ドローン撮影とフォトグラメトリを活用し、見附島の精密な3Dモデルを構築しています。完成したモデルは、防災研究や観光振興、地域教育に活用できるよう公開を予定しています。
           </p>
           <p>2022-06</p>
-          <iframe id="viewer" width="100%" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b865d8e8"></iframe>
-          <p>2025-07</p>
-          <iframe id="viewer" width="100%" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=e937bd82"></iframe>
-          <p>2025-08</p>
-          <iframe id="viewer" width="100%" height="500" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=e11c4ec1"></iframe>
+          <div class="embed-frame">
+            <iframe class="responsive-iframe model-embed" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b865d8e8"></iframe>
+          </div>
+          <div class="embed-grid">
+            <div class="embed-item">
+              <p>2025-05</p>
+              <div class="embed-frame">
+                <iframe class="responsive-iframe model-embed" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=e11c4ec1"></iframe>
+              </div>
+            </div>
+            <div class="embed-item">
+              <p>2025-08</p>
+              <div class="embed-frame">
+                <iframe class="responsive-iframe model-embed" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=e937bd82"></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <span data-i18n="footerCopyright">© 2024 見附島アーカイブ</span>
+        <span data-i18n="footerCopyright">© 2025 見附島アーカイブ</span>
         <a href="terms.html" data-i18n="footerTerms">利用規約</a>
       </div>
     </footer>
