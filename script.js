@@ -1,14 +1,14 @@
 const translations = {
   ja: {
     brand: "見附島アーカイブ",
-    navAbout: "見附島について",
+    navAbout: "見附島とは",
     navDamage: "被害を知る",
     navPhoto: "変化を見守る",
-    nav3d: "3Dデータ公開",
+    nav3d: "ギャラリー",
     heroTitle: "見附島アーカイブへようこそ",
     heroDescription:
       "能登半島地震により大きく姿を変えた見附島。その記憶と景観を未来へつなぐための記録プロジェクトです。",
-    aboutTitle: "見附島について",
+    aboutTitle: "見附島とは",
     aboutBody:
       "見附島は石川県珠洲市に位置する高さ約30メートルの奇岩です。その姿から「軍艦島」とも呼ばれてきました。古くから地域の象徴として親しまれ、周囲の自然とともに多くの人々を魅了してきました。",
     damageTitle: "被害を知る",
@@ -19,7 +19,7 @@ const translations = {
     photoTitle: "変化を見守る",
     photoBody:
       "震災により姿を変えた見附島では、今も緑が広がり続けています。オンラインで収集した写真をもとに、見附島の変化を可視化するタイムラプス映像を作成中です。写真の提供ご協力いただける方はプロジェクトチームまでご連絡ください。",
-    modelsTitle: "3Dデータ公開",
+    modelsTitle: "ギャラリー",
     modelsBody:
       "ドローン撮影で得た映像を活用し、見附島の精密な3Dシーンを構築しています。完成したデータは、さまざまな用途に活用いただけるよう公開しています。また、今後も撮影を継続して参ります。",
     aboutImageAlt: "2023年11月に撮影された見附島の写真",
@@ -34,6 +34,7 @@ const translations = {
     timelapseRidgeAfterLabel: "2025年8月13日撮影",
     timelapseShoreBeforeLabel: "2025年5月26日撮影",
     timelapseShoreAfterLabel: "2025年8月13日撮影",
+    timelapseContributionLink: "写真を投稿する",
     comparisonAria: "スライダーを左右に動かして画像や映像を比較",
     footerCopyright: "© 2025 見附島アーカイブ",
     footerTerms: "利用規約",
@@ -47,7 +48,7 @@ const translations = {
     navAbout: "About Mitsukejima Island",
     navDamage: "Earthquake Damage",
     navPhoto: "Photo Collection",
-    nav3d: "3D Models",
+    nav3d: "Gallery",
     heroTitle: "Welcome to the Mitsukejima Archive",
     heroDescription:
       "This project preserves the changing landscape of Mitsukejima after the Noto Peninsula earthquake so future generations can remember and learn from it.",
@@ -62,7 +63,7 @@ const translations = {
     photoTitle: "Building the Time-lapse",
     photoBody:
       "With contributions from local residents and supporters, we are composing a time-lapse that visualises Mitsukejima's changes over time. If you have photographs or information to share, please get in touch with the project team.",
-    modelsTitle: "3D Models",
+    modelsTitle: "Gallery",
     modelsBody:
       "Using drone imaging and photogrammetry, we are constructing detailed 3D models of Mitsukejima. Once completed, the models will be released for disaster research, tourism promotion, and community education.",
     aboutImageAlt: "Sunset view of Mitsukejima rising from the sea",
@@ -77,6 +78,7 @@ const translations = {
     timelapseRidgeAfterLabel: "After (Ridgeline)",
     timelapseShoreBeforeLabel: "Before (Panorama)",
     timelapseShoreAfterLabel: "After (Panorama)",
+    timelapseContributionLink: "Submit Photos",
     comparisonAria: "Move the slider to compare the images or footage",
     footerCopyright: "© 2025 Mitsukejima Archive",
     footerTerms: "Terms of Use",
