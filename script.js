@@ -217,6 +217,100 @@ const initLanguage = () => {
   });
 };
 
+const safePlay = (video) => {
+  if (!video) {
+    return;
+  }
+  const playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(() => {});
+  }
+};
+
+const initVideoComparison = (container) => {
+  const videos = container.querySelectorAll("video");
+  if (videos.length < 2) {
+    return;
+  }
+
+  const primary = videos[0];
+  const secondary = videos[1];
+  const threshold = 0.05;
+
+  const syncCurrentTime = () => {
+    if (!primary || !secondary) {
+      return;
+    }
+    if (secondary.readyState === 0) {
+      return;
+    }
+    if (Math.abs(primary.currentTime - secondary.currentTime) > threshold) {
+      secondary.currentTime = primary.currentTime;
+    }
+  };
+
+  const syncPlaybackState = () => {
+    if (!primary || !secondary) {
+      return;
+    }
+
+    if (primary.paused && !secondary.paused) {
+      secondary.pause();
+    } else if (!primary.paused && secondary.paused) {
+      safePlay(secondary);
+    }
+
+    if (secondary.playbackRate !== primary.playbackRate) {
+      secondary.playbackRate = primary.playbackRate;
+    }
+  };
+
+  const syncFromPrimary = () => {
+    syncCurrentTime();
+    syncPlaybackState();
+  };
+
+  const primaryEvents = [
+    "play",
+    "pause",
+    "seeking",
+    "timeupdate",
+    "ratechange",
+    "loadeddata",
+    "loadedmetadata",
+  ];
+
+  primaryEvents.forEach((eventName) => {
+    primary.addEventListener(eventName, syncFromPrimary);
+  });
+
+  secondary.addEventListener("loadeddata", syncCurrentTime);
+  secondary.addEventListener("seeking", syncCurrentTime);
+  secondary.addEventListener("ratechange", () => {
+    if (secondary.playbackRate !== primary.playbackRate) {
+      secondary.playbackRate = primary.playbackRate;
+    }
+  });
+
+  secondary.addEventListener("play", () => {
+    if (primary.paused) {
+      safePlay(primary);
+    }
+    syncFromPrimary();
+  });
+
+  primary.addEventListener("ended", () => {
+    syncCurrentTime();
+    syncPlaybackState();
+  });
+
+  if (primary.readyState >= 2) {
+    syncFromPrimary();
+  } else {
+    primary.addEventListener("loadeddata", syncFromPrimary, { once: true });
+  }
+};
+
 const initComparisons = () => {
   document.querySelectorAll("[data-comparison]").forEach((container) => {
     const input = container.querySelector(".comparison-input");
@@ -234,6 +328,10 @@ const initComparisons = () => {
     input.addEventListener("input", (event) => {
       update(event.target.value);
     });
+
+    if (container.dataset.comparisonType === "video") {
+      initVideoComparison(container);
+    }
   });
 };
 

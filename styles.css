@@ -64,7 +64,7 @@ a:focus {
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.75rem 1rem;
@@ -90,6 +90,8 @@ a:focus {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex: 1 1 auto;
+  justify-content: center;
 }
 
 .primary-nav a {
@@ -129,38 +131,59 @@ a:focus {
   align-items: center;
   gap: 0.35rem;
   color: var(--color-nav-text);
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .globe-icon {
   font-size: 1.1rem;
 }
 
-.language-switcher select {
+.language-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* min-width: 130px; */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.language-placeholder {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.9rem;
+  color: var(--color-nav-text);
+  background-color: var(--color-nav-bg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+
+.language-select-wrapper select {
+  position: relative;
+  z-index: 1;
   background: transparent;
   border: 1px solid rgba(244, 245, 237, 0.4);
   border-radius: 4px;
-  color: var(--color-nav-text);
-  padding: 0.35rem 1.25rem 0.35rem 0.5rem;
+  color: transparent;
+  padding: 0.4rem 1.25rem 0.4rem 0.65rem;
   font-size: 0.9rem;
   font-family: inherit;
   appearance: none;
   cursor: pointer;
 }
 
-.language-switcher select:focus {
+.language-select-wrapper select:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-.language-switcher {
-  position: relative;
-}
-
-.language-switcher::after {
-  content: "▾";
-  position: absolute;
-  right: 0.5rem;
-  pointer-events: none;
+.language-select-wrapper select option {
+  color: var(--color-text);
 }
 
 .menu-toggle {
@@ -419,12 +442,17 @@ body.theme-damage .contribution-link:focus-visible {
 
 .comparison-input {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: -1rem;
+  bottom: -1rem;
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
   opacity: 0;
   cursor: col-resize;
+  touch-action: none;
+  z-index: 4;
 }
 
 .comparison-label {
@@ -535,6 +563,7 @@ body.theme-damage .menu-line {
     left: 0;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     background-color: var(--color-nav-bg);
     padding: 1rem;
     gap: 1rem;
@@ -548,11 +577,22 @@ body.theme-damage .menu-line {
   }
 
   .language-switcher {
-    margin-left: auto;
+    margin-left: 0;
+    flex: 0 0 auto;
+  }
+
+  .language-select-wrapper {
+    /* min-width: 110px; */
+  }
+
+  .language-placeholder {
+    font-size: 0.85rem;
   }
 
   .menu-toggle {
     display: flex;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .site-header.nav-open .menu-line:nth-child(1) {

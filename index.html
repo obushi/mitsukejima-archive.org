@@ -26,10 +26,13 @@
         <div class="language-switcher">
           <span class="globe-icon" aria-hidden="true">🌐</span>
           <label class="sr-only" for="language-select">言語</label>
-          <select id="language-select" aria-label="Language">
-            <option value="ja" selected>日本語</option>
-            <option value="en">English</option>
-          </select>
+          <div class="language-select-wrapper">
+            <span class="language-placeholder" aria-hidden="true">Language</span>
+            <select id="language-select" aria-label="Language">
+              <option value="ja" selected>日本語</option>
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
         <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="menu-line"></span>
