@@ -420,10 +420,14 @@ body.theme-damage .contribution-link:focus-visible {
   top: 0;
   bottom: 0;
   left: calc(var(--position) * 1%);
-  width: 2px;
-  background-color: rgba(244, 245, 237, 0.85);
+  width: 4px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 45%, #ffffff 55%, rgba(255, 255, 255, 0) 100%);
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
   transform: translateX(-50%);
   pointer-events: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+  z-index: 5;
 }
 
 .comparison-handle::before {
@@ -431,13 +435,25 @@ body.theme-damage .contribution-link:focus-visible {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 2px solid rgba(244, 245, 237, 0.95);
-  background-color: rgba(39, 64, 48, 0.7);
+  border: 2px solid #ffffff;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(39, 64, 48, 0.9));
   transform: translate(-50%, -50%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.comparison-handle::after {
+  content: "\2194";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 0.85rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .comparison-input {
