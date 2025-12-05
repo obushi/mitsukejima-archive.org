@@ -103,6 +103,15 @@
 </head>
 <body class="antialiased">
 
+    <!-- 背景動画 (Fixed Background Video) -->
+    <!-- preload="auto" を追加し、シーク性能を向上。ページ全体の背景として固定 -->
+    <div class="fixed inset-0 -z-50 overflow-hidden">
+        <video id="scroll-video" autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover opacity-80 brightness-75 grayscale-[10%] transition-opacity duration-500">
+            <source src="mitsukejima-overview.webm" type="video/webm">
+            <img src="https://images.unsplash.com/photo-1547619292-240402b5ae5d?q=80&w=2574" class="w-full h-full object-cover">
+        </video>
+    </div>
+
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8">
         <button id="close-menu-btn" class="absolute top-6 right-6 text-slate-600 p-2">
@@ -110,14 +119,20 @@
         </button>
         <a href="#status" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">見附島のいま</a>
         <a href="#vision" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">タイムラプス</a>
-        <a href="#tech" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">立体記録</a>
-        <a href="#join" class="text-xl font-bold text-accent mobile-link flex items-center gap-2 mt-8">
-            <span>参加する</span>
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
+        <!-- 修正: 立体記録 -> 参加する→ -->
+        <a href="#join" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">参加する→</a>
+        
+        <!-- モバイル用 言語選択 -->
+        <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+            <select onchange="if(this.value) window.location.href=this.value" class="bg-transparent focus:outline-none cursor-pointer">
+                <option value="#" selected>日本語</option>
+                <option value="/en/index.html">English</option>
+            </select>
+        </div>
     </div>
 
-    <!-- Header: groupクラスを追加し、スクロール状態に応じて子要素のスタイルを切り替え -->
+    <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent group">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             
@@ -131,14 +146,18 @@
             <nav class="hidden md:flex gap-8 text-base tracking-widest text-white/90 drop-shadow-md font-medium transition-colors duration-300 group-[.scrolled]:text-gray-900 group-[.scrolled]:font-bold group-[.scrolled]:drop-shadow-none">
                 <a href="#status" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">見附島のいま</a>
                 <a href="#vision" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">タイムラプス</a>
-                <a href="#tech" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">立体記録</a>
+                <!-- 修正: 立体記録 を 参加する に置き換え、リンク先を #join に設定 -->
+                <a href="#join" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">参加する→</a>
             </nav>
 
-            <!-- 参加ボタン -->
-            <a href="#join" class="hidden md:flex items-center gap-2 text-base font-bold text-white drop-shadow-md hover:text-white/80 transition-colors duration-300 group-[.scrolled]:text-accent group-[.scrolled]:drop-shadow-none group-[.scrolled]:hover:text-teal-800">
-                <span>参加する</span>
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </a>
+            <!-- 言語選択 (PC用) -->
+            <div class="hidden md:flex items-center gap-1 text-white/90 drop-shadow-md transition-colors duration-300 group-[.scrolled]:text-gray-900 group-[.scrolled]:drop-shadow-none">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+                <select onchange="if(this.value) window.location.href=this.value" class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer appearance-none py-1 pr-2 pl-1 hover:text-accent group-[.scrolled]:hover:text-accent transition-colors">
+                    <option value="#" selected class="text-black">日本語</option>
+                    <option value="/en/index.html" class="text-black">English</option>
+                </select>
+            </div>
 
             <!-- メニューボタン -->
             <button id="mobile-menu-btn" class="md:hidden text-white drop-shadow-md group-[.scrolled]:text-gray-800 group-[.scrolled]:drop-shadow-none">
@@ -171,7 +190,7 @@
             <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white/80"></div>
 
             <p class="text-[10px] tracking-[0.4em] uppercase font-bold mb-6 opacity-90 font-sans">Mitsukejima Digital Archive</p>
-            <h1 class="font-sans font-light tracking-widest mb-6 leading-tight">
+            <h1 class="font-sans font-medium tracking-widest mb-6 leading-tight">
                 <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">見附島を定点観測して</span>
                 <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">タイムラプスを作ろう。</span>
             </h1>
@@ -304,11 +323,11 @@
                     </div>
                     <div class="px-2 pb-2">
                         <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
-                            Photo Collection
+                            Time-lapse Mining
                             <i data-lucide="clock" class="w-4 h-4 text-accent opacity-50"></i>
                         </h3>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            見附島の写真をオンラインで収集します。
+                            色合いや画角が異なる写真群から、AI技術を用いて滑らかな「時間の変化」を抽出・生成します。
                         </p>
                     </div>
                 </div>
@@ -316,15 +335,16 @@
                 <!-- Card 3: Digital Twin (YouTube) -->
                 <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group">
+                        <!-- YouTube iframe (ダミーURL) -->
                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=dummy" title="Digital Twin Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="px-2 pb-2">
                         <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
-                            Time-lapse Mining
+                            Digital Twin
                             <i data-lucide="database" class="w-4 h-4 text-accent opacity-50"></i>
                         </h3>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            色合いや画角が異なる写真群から、AI技術を用いて滑らかな「時間の変化」を抽出・生成します。
+                            フォトグラメトリやNeRF技術を用い、島を立体的な3Dデータとしてデジタル空間に永久保存します。
                         </p>
                     </div>
                 </div>
@@ -332,7 +352,7 @@
         </div>
     </section>
 
-    <!-- Tech Section -->
+    <!-- Tech -->
     <section id="tech" class="py-32 px-6 bg-ice">
         <div class="container mx-auto max-w-6xl">
             <div class="frosted-glass rounded-3xl p-2 md:p-4 border border-white reveal">
@@ -347,7 +367,7 @@
                                 <span class="text-accent text-xs font-bold tracking-widest mb-4 block">TECHNOLOGY</span>
                                 <h3 class="text-2xl font-serif text-slate-800 mb-6">3Dで見附島を残す</h3>
                                 <p class="text-sm text-slate-500 leading-relaxed mb-8">
-                                    動画から3Dシーンを再現する技術（3D Gaussian Splatting）を活用。
+                                    複数の写真から立体形状を復元する「フォトグラメトリ」や、AIによる最新の空間再現技術（NeRF / Gaussian Splatting）を活用。
                                     <br><br>
                                     まるでその場にいるかのようなリアリティで、見附島を後世に伝えます。
                                 </p>
