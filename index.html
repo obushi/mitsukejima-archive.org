@@ -106,9 +106,9 @@
         <button id="close-menu-btn" class="absolute top-6 right-6 text-slate-600 p-2">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        <a href="#status" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">見附島のいま</a>
-        <a href="#vision" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">タイムラプス</a>
-        <a href="#join" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">参加する</a>
+        <a href="#condition" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">見附島のいま</a>
+        <a href="#timelapse" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">タイムラプス</a>
+        <a href="#contribute" class="text-2xl font-serif text-slate-800 mobile-link hover:text-accent transition-colors">参加する</a>
         
         <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
             <i data-lucide="globe" class="w-6 h-6"></i>
@@ -122,9 +122,7 @@
 
     <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent group">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            
-            <!-- ロゴエリア: リンクに変更 -->
+        <div class="container mx-auto px-6 py-2 md:py-4 flex justify-between items-center">
             <a href="#" class="flex items-center gap-3 group/logo transition-opacity hover:opacity-80">
                 <img src="logo.svg" alt="Logo" class="w-12 h-12 object-contain transition-all duration-300 drop-shadow-md group-[.scrolled]:drop-shadow-none">
                 <span class="font-sans tracking-widest text-lg font-normal text-white drop-shadow-md transition-colors duration-300 group-[.scrolled]:text-black group-[.scrolled]:drop-shadow-none">見附島アーカイブ</span>
@@ -132,9 +130,9 @@
             
             <!-- ナビゲーション -->
             <nav class="hidden md:flex gap-8 text-base tracking-widest text-white/90 drop-shadow-md font-medium transition-colors duration-300 group-[.scrolled]:text-gray-900 group-[.scrolled]:font-bold group-[.scrolled]:drop-shadow-none">
-                <a href="#status" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">見附島のいま</a>
-                <a href="#vision" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">写真収集</a>
-                <a href="#join" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">参加する</a>
+                <a href="#condition" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">見附島のいま</a>
+                <a href="#timelapse" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">写真収集</a>
+                <a href="#contribute" class="hover:text-white group-[.scrolled]:hover:text-accent transition-colors">参加する</a>
             </nav>
 
             <!-- 言語選択 (PC用) -->
@@ -159,16 +157,16 @@
         
         <!-- 背景動画 (Hero Section Only) -->
         <div class="absolute inset-0 z-0">
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-80 brightness-75 grayscale-[10%]">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-75 grayscale-[0%]">
                 <source src="mitsukejima-overview.webm" type="video/webm">
             </video>
             <!-- グラデーションオーバーレイ -->
             <div class="absolute inset-0 bg-gradient-to-t from-ice via-transparent to-transparent z-10"></div>
-            <div class="absolute inset-0 bg-white/20 z-10"></div>
+            <div class="absolute inset-0 bg-white/10 z-10"></div>
         </div>
 
         <!-- コンテンツ -->
-        <div class="relative p-12 animate-float text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] z-10">
+        <div class="relative p-6 md:p-12 animate-float text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] z-10">
             
             <!-- Viewfinder Corners (L字枠) -->
             <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white/80"></div>
@@ -179,15 +177,16 @@
             <p class="text-[10px] tracking-[0.4em] uppercase font-bold mb-6 opacity-90 font-sans">Mitsukejima Digital Archive</p>
             <h1 class="font-sans font-medium tracking-widest mb-6 leading-tight">
                 <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">見附島を定点観測して</span>
-                <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">タイムラプスを作ろう。</span>
+                <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">タイムラプスを作ろう</span>
             </h1>
-            <p class="text-xs md:text-sm font-sans font-medium tracking-wider leading-relaxed opacity-95">
-                みなさまの一枚が、見附島の時間を紡ぐ糸になる。それぞれの記憶を編み上げ、未来への記録をつくります。
+            <p class="text-left text-sm md:text-lg font-sans font-medium tracking-wider leading-relaxed">
+                能登半島地震により大規模崩落した、石川県<ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市のシンボル・見附島。<br>
+                みんなの写真が時間を紡ぐ糸として記憶を編み上げ、未来へ残す記録となります。
             </p>
 
             <!-- スマホ用 参加ボタン (md:hidden でPCでは非表示) -->
             <div class="mt-8 md:hidden">
-                <a href="#join" class="inline-flex items-center gap-2 px-6 py-3 bg-accent/90 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-bold shadow-lg transition-transform hover:scale-105">
+                <a href="#contribute" class="inline-flex items-center gap-2 px-6 py-3 bg-accent/90 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-bold shadow-lg transition-transform hover:scale-105">
                     <span>参加する</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
@@ -199,21 +198,20 @@
         </div>
     </section>
 
-    <!-- Status: Before/After Slider -->
-    <section id="status" class="py-32 px-6 bg-ice relative border-t border-slate-100">
-        <div class="container mx-auto max-w-6xl">
+    <!-- Condition: Before/After Slider -->
+    <section id="condition" class="py-16 md:py-32 px-6 bg-ice relative border-t border-slate-100">
+        <div class="container mx-auto max-w-8xl">
             <div class="flex flex-col md:flex-row gap-16 items-center">
                 
-                <!-- 画像比較スライダー -->
-                <div class="md:w-1/2 relative h-[500px] w-full reveal select-none group rounded-2xl overflow-hidden shadow-2xl comparison-slider" id="comparison-container">
+                <div class="md:w-1/2 relative h-[300px] md:h-[500px] w-full reveal select-none group rounded-2xl overflow-hidden shadow-2xl comparison-slider" id="comparison-container">
                     <div class="absolute inset-0 w-full h-full z-0">
                         <img src="./after.jpg" class="w-full h-full object-cover grayscale-[10%]" alt="2025年8月">
                     </div>
                     <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10" id="comparison-overlay">
                         <img src="./before.jpg" class="h-full object-cover max-w-none" id="comparison-image-before" alt="2023年11月" style="width: 100%;">
                     </div>
-                    <div id="label-past" class="absolute bottom-4 left-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-slate-700 z-20 pointer-events-none whitespace-nowrap">震災前 2023年11月</div>
-                    <div id="label-current" class="absolute bottom-4 right-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-accent z-20 pointer-events-none whitespace-nowrap">震災後 2025年8月</div>
+                    <div class="absolute bottom-4 left-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-slate-700 z-20 pointer-events-none whitespace-nowrap">震災前 2023年11月</div>
+                    <div class="absolute bottom-4 right-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-slate-700 z-20 pointer-events-none whitespace-nowrap">震災後 2025年8月</div>
                     <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30" id="comparison-handle">
                         <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg text-accent hover:scale-110 transition-transform">
                             <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
@@ -221,19 +219,18 @@
                     </div>
                 </div>
 
-                <!-- テキスト -->
-                <div class="md:w-1/2 space-y-8 reveal">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 leading-snug">
-                        いま、見附島で<br>起きていること
+                <div class="md:w-1/2 space-y-6 reveal">
+                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800">
+                        いま見附島で起きていること
                     </h2>
-                    <div class="space-y-6 text-slate-600 font-light leading-loose text-sm md:text-base text-justify">
+                    <div class="text-slate-600 font-light leading-loose md:leading-loose text-base md:text-base text-justify">
                         <p>
-                            2024年元日の能登半島地震により、見附島が位置する石川県<ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市では震度6強の揺れを観測しました。
+                            2024年元日の能登半島地震により、見附島が位置する石川県<ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市では震度6強の揺れに見舞われました。
                             左の写真は震災前（2023年11月）、右の写真は震災後の姿（2025年8月）に撮影されたものです。
                             スライダーを動かすことで、その変化を比較できます。
                         </p>
                         <p>
-                            石川県立大のプロジェクトチームによると、体積の約2割が崩落し、島の形状は不可逆的な変化を遂げました。
+                            石川県立大のプロジェクトチームによると、体積の約2割が崩落しました。
                             しかし、これは「終わり」ではありません。崩れた斜面により面積は約8割増加し、<span class="bg-accent/10 text-accent px-1 font-medium">崩れた斜面には新たな草木が芽吹き始めています</span>。
                             島頂部の枯れ木が目立つ一方で、新たな発芽も見つかっています。
                         </p>
@@ -257,39 +254,38 @@
         </div>
     </section>
 
-    <!-- Vision Section -->
-    <section id="vision" class="py-32 bg-white relative">
+    <!-- Timelapse Section -->
+    <section id="timelapse" class="py-16 md:py-32 bg-white relative">
         <div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 40px 40px; opacity: 0.3;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-10 reveal">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">
+                <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">
                     記録を未来に託す
                 </h2>
-                <div class="space-y-6 text-slate-600 font-light leading-loose text-sm md:text-base text-justify">
+                <div class="space-y-6 text-slate-600 font-light leading-loose md:leading-loose text-base md:text-base text-justify">
                     <p>
                         「ゆっくり進む変化」は、日々見ていると気づきにくいものです。
                         皆さまの写真を結集し、バラバラな記録をつなぎ合わせることで、
-                        見附島の変化を可視化する「タイムラプス」を生成します。
+                        <span class="bg-accent/10 text-accent px-1 font-medium">見附島の変化を可視化する「タイムラプス」</span>を生成します。
                     </p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-6 max-w-8xl mx-auto">
                 <!-- Card 1: 再生の記録 (Comparison Slider) -->
                 <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col">
+
+
                     <div class="aspect-video w-full rounded-xl overflow-hidden shadow-inner relative comparison-slider mb-4 bg-gray-200" id="regeneration-container">
                         <div class="absolute inset-0 w-full h-full z-0">
                             <img src="timelapse-after.jpg" class="w-full h-full object-cover" alt="再生後のイメージ">
-                            <!-- ラベルを画像の外（z-0の上、z-20）に配置 -->
                         </div>
                         <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10" id="regeneration-overlay">
                             <img src="timelapse-before.jpg" class="h-full object-cover max-w-none" id="regeneration-image-before" alt="現在の岩肌" style="width: 100%;">
                         </div>
-                        <!-- Label (Past) -->
+
                         <div class="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">2024年2月</div>
-                        <!-- Label (Future) -->
                         <div class="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">2025年8月</div>
-                        <!-- Handle -->
                         <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30" id="regeneration-handle">
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-lg text-accent hover:scale-110 transition-transform">
                                 <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
@@ -298,16 +294,14 @@
                     </div>
                     <div class="px-2 pb-2">
                         <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
-                            <i data-lucide="sprout" class="w-4 h-4 text-accent opacity-50"></i>
+                            <i data-lucide="sprout" class="w-4 h-4 text-accent"></i>
                             再生の記録
                         </h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-sm text-slate-500 leading-relaxed">
                             見附島では今後数十年で樹木が再生していく可能性があります。緑がどのように戻るか、その生命力を記録します。
                         </p>
                     </div>
                 </div>
-
-                <!-- Card 2: Time-lapse Mining (Static Image) -->
                 <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 100ms;">
                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-gray-100 mb-4 relative shadow-inner">
                         <img src="./mitsukejima_thumbnail.jpg" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" alt="Time-lapse Mining イメージ">
@@ -315,27 +309,25 @@
                     </div>
                     <div class="px-2 pb-2">
                         <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
-                            <i data-lucide="clock" class="w-4 h-4 text-accent opacity-50"></i>
+                            <i data-lucide="folder-clock" class="w-4 h-4 text-accent"></i>
                              写真収集
                         </h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">
+                        <p class="text-sm text-slate-500 leading-relaxed">
                             色合いや画角が異なる写真群から、画像処理を用いて滑らかな「時間の変化」を抽出しタイムラプス映像を生成します。
                         </p>
                     </div>
                 </div>
-
-                <!-- Card 3: Digital Twin (YouTube) -->
                 <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group">
-                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/wptzVm0tngc?si=0SdRQQ_y2ifhaW4p&amp;controls=0&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/wptzVm0tngc?autoplay=1&amp;mute=1&amp;si=0SdRQQ_y2ifhaW4p&amp;controls=0&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="px-2 pb-2">
                         <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
-                            <i data-lucide="database" class="w-4 h-4 text-accent opacity-50"></i>
+                            <i data-lucide="clapperboard" class="w-4 h-4 text-accent"></i>
                             タイムラプス・マイニング
                         </h3>
-                        <p class="text-xs text-slate-500 leading-relaxed">
-                            2015年に発表された論文で、インターネット上の写真からタイムラプスを生成する
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            インターネット上の写真からタイムラプスを生成する手法に関する論文"Time-lapse Mining from Internet Photos"が2015年に発表されました。本プロジェクトでは、
                         </p>
                     </div>
                 </div>
@@ -344,14 +336,13 @@
     </section>
 
     <!-- Tech -->
-    <section id="tech" class="py-32 px-6 bg-ice">
-        <div class="container mx-auto max-w-6xl">
+    <section id="tech" class="py-16 md:py-32 px-6 bg-ice">
+        <div class="container mx-auto max-w-8xl">
             <div class="frosted-glass rounded-3xl p-2 md:p-4 border border-white reveal">
                 <div class="bg-white rounded-2xl overflow-hidden relative shadow-inner">
                     <div class="flex flex-col md:flex-row">
                         <!-- 3D Viewer: iframe を全画面に -->
                         <div class="md:w-2/3 relative aspect-video bg-slate-100 group overflow-hidden">
-                            <!-- <iframe id="viewer" class="absolute inset-0 w-full h-full z-10" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b865d8e8"></iframe> -->
                             <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
                                 <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group" id="viewer-container">
                                     <!-- 背景 (After/Current) -->
@@ -362,7 +353,6 @@
                                     </div>
                                     <!-- 前景 (Before/Past) -->
                                     <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10" id="viewer-overlay">
-                                    <!-- 震災前の3Dビューワーiframe (仮の動画を使用) -->
                                         <video id="viewer-image-before" class="w-full h-full max-w-none" autoplay muted loop playsinline preload="metadata">
                                             <source src="damage-before.webm" type="video/webm">
                                         </video>
@@ -382,22 +372,29 @@
                         </div>
                         <div class="md:w-1/3 p-8 md:p-12 flex flex-col justify-between bg-white">
                             <div>
-                                <span class="text-accent text-xs font-bold tracking-widest mb-4 block">TECHNOLOGY</span>
-                                <h3 class="text-2xl font-serif text-slate-800 mb-6">3Dでも見附島を残す</h3>
+                                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">3Dシーンの構築</h2>
                                 <p class="text-sm text-slate-500 leading-relaxed mb-8">
                                     全周動画から3次元シーンを復元する技術（3D Gaussian Splatting）を使用し3Dデータを作成できます。まるでその場にいるかのようなリアリティで、見附島を後世に伝えます。
                                 </p>
                             </div>
                             
                             <div class="border-t border-slate-100 pt-6">
-                                <p class="text-xs font-bold text-slate-700 flex items-center gap-2 mb-2">
+                                <p class="text-sm font-bold text-slate-700 flex items-center gap-2 mb-2">
                                     <i data-lucide="camera" class="w-4 h-4 text-accent"></i>
                                     ドローン動画募集中
                                 </p>
-                                <p class="text-[11px] text-slate-400">
+                                <p class="text-xs text-slate-400">
                                     3Dデータ化のため、見附島の全周を撮影したドローン映像を探しています。
                                 </p>
                             </div>
+                        </div>
+                        <div class="md:w-1/4 p-8 md:p-12 flex flex-col bg-white">
+                            <h3 class="md:text-xl font-serif font-bold leading-snug mb-10">作成した3Dシーン</h3>
+                            <ul class="list-disc">
+                                <li class="font-light"><a href="https://superspl.at/s?id=b865d8e8">2022年6月20日撮影分</a></li>
+                                <li class="font-light"><a href="https://superspl.at/view?id=e11c4ec1">2025年5月26日撮影分</a></li>
+                                <li class="font-light"><a href="https://superspl.at/view?id=e937bd82">2025年8月13日撮影分</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -405,8 +402,8 @@
         </div>
     </section>
 
-    <!-- Join -->
-    <section id="join" class="py-32 px-6 bg-white relative">
+    <!-- Contribute -->
+    <section id="contribute" class="py-32 px-6 bg-white relative">
         <div class="container mx-auto max-w-4xl text-center reveal">
             <div class="w-16 h-16 rounded-full bg-ice mx-auto flex items-center justify-center mb-8 text-accent">
                 <i data-lucide="upload-cloud" class="w-8 h-8"></i>
@@ -451,10 +448,9 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-200/60 text-[10px] text-slate-400 font-mono">
-                <p>&copy; 2025 Mitsukejima Archive Project. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-accent transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-accent transition-colors">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-accent transition-colors">利用規約</a>
                 </div>
             </div>
         </div>
