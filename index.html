@@ -327,7 +327,6 @@
                 <!-- Card 3: Digital Twin (YouTube) -->
                 <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group">
-                        <!-- YouTube iframe (ダミーURL) -->
                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/wptzVm0tngc?si=0SdRQQ_y2ifhaW4p&amp;controls=0&amp;start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="px-2 pb-2">
@@ -352,7 +351,34 @@
                     <div class="flex flex-col md:flex-row">
                         <!-- 3D Viewer: iframe を全画面に -->
                         <div class="md:w-2/3 relative aspect-video bg-slate-100 group overflow-hidden">
-                            <iframe id="viewer" class="absolute inset-0 w-full h-full z-10" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b865d8e8"></iframe>
+                            <!-- <iframe id="viewer" class="absolute inset-0 w-full h-full z-10" allow="fullscreen; xr-spatial-tracking" src="https://superspl.at/s?id=b865d8e8"></iframe> -->
+                            <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
+                                <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group" id="viewer-container">
+                                    <!-- 背景 (After/Current) -->
+                                    <div class="absolute inset-0 w-full h-full z-0">
+                                        <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                                            <source src="damage-after.webm" type="video/webm">
+                                        </video>
+                                    </div>
+                                    <!-- 前景 (Before/Past) -->
+                                    <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10" id="viewer-overlay">
+                                    <!-- 震災前の3Dビューワーiframe (仮の動画を使用) -->
+                                        <video id="viewer-image-before" class="w-full h-full max-w-none" autoplay muted loop playsinline preload="metadata">
+                                            <source src="damage-before.webm" type="video/webm">
+                                        </video>
+                                    </div>
+                                    <!-- Label (Past) -->
+                                    <div class="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">BEFORE / 震災前</div>
+                                    <!-- Label (Current) -->
+                                    <div class="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">AFTER / 震災後</div>
+                                    <!-- Handle -->
+                                    <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30" id="viewer-handle">
+                                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-lg text-accent hover:scale-110 transition-transform">
+                                            <i data-lucide="chevrons-left-right" class="w-4 h-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="md:w-1/3 p-8 md:p-12 flex flex-col justify-between bg-white">
                             <div>
@@ -556,6 +582,13 @@
             'regeneration-overlay', 
             'regeneration-handle', 
             'regeneration-image-before'
+        );
+
+        initComparisonSlider(
+            'viewer-container',
+            'viewer-overlay',
+            'viewer-handle',
+            'viewer-image-before'
         );
 
     </script>
