@@ -199,7 +199,7 @@
     </section>
 
     <!-- Condition: Before/After Slider -->
-    <section id="condition" class="py-16 md:py-32 px-6 bg-ice relative border-t border-slate-100">
+    <section id="condition" class="py-8 md:py-32 px-6 bg-ice relative border-t border-slate-100">
         <div class="container mx-auto max-w-8xl">
             <div class="flex flex-col md:flex-row gap-16 items-center">
                 
@@ -255,7 +255,7 @@
     </section>
 
     <!-- Timelapse Section -->
-    <section id="timelapse" class="py-16 md:py-32 bg-white relative">
+    <section id="timelapse" class="py-8 md:py-32 bg-white relative">
         <div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 40px 40px; opacity: 0.3;"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-10 reveal">
@@ -336,12 +336,11 @@
     </section>
 
     <!-- Tech -->
-    <section id="tech" class="py-16 md:py-32 px-6 bg-ice">
+    <section id="tech" class="py-8 md:py-32 px-6 bg-ice">
         <div class="container mx-auto max-w-8xl">
             <div class="frosted-glass rounded-3xl p-2 md:p-4 border border-white reveal">
                 <div class="bg-white rounded-2xl overflow-hidden relative shadow-inner">
                     <div class="flex flex-col md:flex-row">
-                        <!-- 3D Viewer: iframe を全画面に -->
                         <div class="md:w-2/3 relative aspect-video bg-slate-100 group overflow-hidden">
                             <div class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col" style="transition-delay: 200ms;">
                                 <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group" id="viewer-container">
@@ -372,9 +371,18 @@
                         </div>
                         <div class="md:w-1/3 p-8 md:p-12 flex flex-col justify-between bg-white">
                             <div>
-                                <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">3Dシーンの構築</h2>
+                                <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">3Dシーンの構築</h2>
                                 <p class="text-sm text-slate-500 leading-relaxed mb-8">
-                                    全周動画から3次元シーンを復元する技術（3D Gaussian Splatting）を使用し3Dデータを作成できます。まるでその場にいるかのようなリアリティで、見附島を後世に伝えます。
+                                    全周動画から3次元シーンを復元する技術（3D Gaussian Splatting）を使用し3Dデータを作成できます。様々な角度から、見附島の姿を後世に伝えます。
+                                </p>
+                                <p class="text-sm font-bold text-slate-700 flex items-center gap-2">
+                                    <i data-lucide="rotate-3d" class="w-4 h-4 text-accent"></i>
+                                    作成した3Dシーン (外部サイト)
+                                    <ul class="list-disc p-4">
+                                        <li class="font-light text-sm"><a href="https://superspl.at/s?id=b865d8e8" target="_blank">2022年6月20日撮影分</a></li>
+                                        <li class="font-light text-sm"><a href="https://superspl.at/view?id=e11c4ec1" target="_blank">2025年5月26日撮影分</a></li>
+                                        <li class="font-light text-sm"><a href="https://superspl.at/view?id=e937bd82" target="_blank">2025年8月13日撮影分</a></li>
+                                    </ul>
                                 </p>
                             </div>
                             
@@ -388,14 +396,9 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="md:w-1/4 p-8 md:p-12 flex flex-col bg-white">
-                            <h3 class="md:text-xl font-serif font-bold leading-snug mb-10">作成した3Dシーン</h3>
-                            <ul class="list-disc">
-                                <li class="font-light"><a href="https://superspl.at/s?id=b865d8e8">2022年6月20日撮影分</a></li>
-                                <li class="font-light"><a href="https://superspl.at/view?id=e11c4ec1">2025年5月26日撮影分</a></li>
-                                <li class="font-light"><a href="https://superspl.at/view?id=e937bd82">2025年8月13日撮影分</a></li>
-                            </ul>
-                        </div>
+                        <!-- <div class="md:w-1/4 p-8 md:p-12 flex flex-col bg-white">
+
+                        </div> -->
                     </div>
                 </div>
             </div>
