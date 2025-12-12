@@ -1,63 +1,270 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>利用規約 | 見附島アーカイブ</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon.png">
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約 見附島アーカイブ | Mitsukejima Archive</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="nav-container">
-        <a class="brand" href="index.html">
-          <img class="brand-logo" src="media/logo.svg" alt="" aria-hidden="true">
-          <span class="brand-text" data-i18n="brand">見附島アーカイブ</span>
-        </a>
-        <nav class="primary-nav" aria-label="Main navigation">
-          <a href="index.html#about" data-i18n="navAbout">見附島について</a>
-          <a href="index.html#damage" data-i18n="navDamage">被害を知る</a>
-          <a href="index.html#timelapse" data-i18n="navPhoto">タイムラプス作成</a>
-          <a href="index.html#models" data-i18n="nav3d">3Dモデル</a>
-        </nav>
-        <div class="language-switcher">
-          <span class="globe-icon" aria-hidden="true">🌐</span>
-          <label class="sr-only" for="language-select">言語</label>
-          <select id="language-select" aria-label="Language">
-            <option value="ja" selected>日本語</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-        <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="menu-line"></span>
-          <span class="menu-line"></span>
-          <span class="menu-line"></span>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./tailwind.css">
+
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="antialiased">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl shadow-sm border-gray-200 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-slate-600 p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-      </div>
+        <a href="./index.html#condition" class="text-2xl text-slate-800 mobile-link active:text-accent">見附島のいま</a>
+        <a href="./index.html#timelapse" class="text-2xl text-slate-800 mobile-link active:text-accent">タイムラプス</a>
+        <a href="./index.html#contribute" class="text-2xl text-slate-800 mobile-link active:text-accent">参加する</a>
+
+        <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+            <select onchange="if(this.value) window.location.href=this.value"
+                class="bg-transparent focus:outline-none cursor-pointer">
+                <option value="" disabled hidden selected>Language</option>
+                <option value="/">日本語</option>
+                <option value="/en/index.html">English</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-white/95 backdrop-blur-xl shadow-sm border-gray-200 group">
+        <div class="container mx-auto px-6 py-2 md:py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group/logo transition-opacity hover:opacity-80">
+                <img src="./media/logo.svg" alt="Mitsukejima Archive Logo"
+                    class="w-12 h-12 object-contain transition-all duration-300 drop-shadow-md drop-shadow-none">
+                <span class="font-sans tracking-widest text-lg font-normal drop-shadow-md text-black drop-shadow-none">
+                    見附島アーカイブ
+                </span>
+            </a>
+
+            <!-- ナビゲーション -->
+            <nav class="hidden md:flex gap-8 text-base tracking-widest text-gray-900 font-bold drop-shadow-none">
+                <a href="./index.html#condition"
+                    class="active:text-white active:text-accent transition-colors">見附島のいま</a>
+                <a href="./index.html#timelapse"
+                    class="active:text-white active:text-accent transition-colors">タイムラプス</a>
+                <a href="./index.html#contribute"
+                    class="active:text-white active:text-accent transition-colors">参加する</a>
+            </nav>
+
+            <!-- 言語選択 (PC用) -->
+            <div class="hidden md:flex items-center gap-1 drop-shadow-md text-gray-900 drop-shadow-none">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+                <select onchange="if(this.value) window.location.href=this.value"
+                    class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer appearance-none py-1 pr-2 pl-1 hover:text-accent hover:text-accent transition-colors">
+                    <option value="" disabled hidden selected>Language</option>
+                    <option value="/" class="text-black">日本語</option>
+                    <option value="/en/index.html" class="text-black">English</option>
+                </select>
+            </div>
+
+            <!-- メニューボタン -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-800 drop-shadow-none" aria-label="Open menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
     </header>
 
-    <main>
-      <section class="content-section terms">
-        <div class="section-inner">
-          <h1 data-i18n="termsTitle">利用規約</h1>
-          <p data-i18n="termsBody">
-            本アーカイブに掲載されている写真、映像、3Dモデルなどの著作物を無断で複製・配布・改変することを禁じます。利用に関するお問い合わせはプロジェクトチームまでご連絡ください。
-          </p>
-          <p class="terms-back"><a href="index.html" data-i18n="termsBack">トップページに戻る</a></p>
+    <main class="pt-32 pb-16 bg-ice">
+        <div class="container mx-auto px-6 max-w-4xl">
+
+            <div class="mb-16">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-2">
+                    利用規約およびプライバシーポリシー
+                </h1>
+                <p class="text-slate-500">
+                    Terms of Use and Privacy Policy
+                </p>
+            </div>
+
+            <!-- 利用規約セクション -->
+            <section id="terms" class="mt-[-100px] pt-[100px]">
+                <h2 class="text-3xl font-serif font-bold text-slate-800 mb-6 border-b border-gray-300 pb-2">
+                    利用規約
+                </h2>
+                <div class="text-slate-700 space-y-4 text-sm leading-relaxed">
+                    <p>
+                        この「見附島アーカイブプロジェクト」（以下、当プロジェクト）は、見附島および周辺地域の経年変化の記録を目的としています。本サービスを利用される全てのユーザーは、以下の利用規約に同意したものとみなされます。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第1条 目的と利用範囲</h3>
+                    <p>
+                        当プロジェクトは、ユーザーから提供された写真データ・動画データ・提供者の属性に関する情報および思い出（以下、提供データ）を収集し、見附島の経年変化の記録と分析・3次元シーンの構築および当プロジェクトに係る情報発信のために利用します。また、当プロジェクトの成果物（収集した資料やタイムラプス映像並びに3Dシーン等の制作物を指します）を一般に対して公開または特定の者に対し提供します。なお、ユーザーが本サービス上で提供データの公開を許諾しないことを選択した場合、ユーザーの提供データは公開しません。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第2条 提供データに関する権利および利用・公開の方法</h3>
+                    <p>
+                        別途 <a href="https://drive.google.com/file/d/1cWYjKkUBJ6o0dGC-zpih-MT_se9YEB_u/view?usp=drive_link" target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">「見附島アーカイブ」への資料提供に関する同意書</a> 内で定めます。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第3条 禁止事項</h3>
+                    <p>
+                        以下の行為を禁止します。
+                    </p>
+                    <ul>
+                        <li class="ml-4 list-none">本規約・法令に違反する行為</li>
+                        <li class="ml-4 list-none">公の秩序または善良の風俗を害するおそれのある行為</li>
+                        <li class="ml-4 list-none">反社会的勢力等に対する利益供与その他の協力行為</li>
+                        <li class="ml-4 list-none">本プロジェクトや他のユーザーまたはその他の第三者の著作権等の知的財産権・肖像権・プライバシー・名誉・その他の権利または利益を侵害する行為</li>
+                        <li class="ml-4 list-none">本サービスが予定している利用目的と異なる目的で本サービスを利用する行為</li>
+                        <li class="ml-4 list-none">本サービスの運営または他のユーザーによる本サービスの利用を妨害し、支障を与える行為</li>
+                        <li class="ml-4 list-none">コンピュータウィルスその他の有害なコンピュータプログラムを送信する行為</li>
+                        <li class="ml-4 list-none">本サービス上で提供されるコンテンツおよびデータその他ソフトウェア等を改変・翻案・リバースエンジニアリング等する行為</li>
+                        <li class="ml-4 list-none">本プロジェクトの情報を改ざんもしくは消去する行為</li>
+                        <li class="ml-4 list-none">本プロジェクトもしくは他のユーザーまたはその他の第三者になりすます行為</li>
+                        <li class="ml-4 list-none">前各号の行為に準ずる行為</li>
+                        <li class="ml-4 list-none">前各号の行為を援助または助長する行為</li>
+                        <li class="ml-4 list-none">その他本プロジェクトが前各号の行為に該当するおそれがあると判断する行為および本プロジェクトが不適切と判断する行為</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第4条 免責事項</h3>
+                    <p>
+                        当プロジェクトは、成果物の内容の真正性・正確性・完全性について一切保証しません。また、本サービスを利用したこと、または利用できなかったことによって生じるいかなる損害についても責任を負いません。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第5条 変更</h3>
+                    <ul>
+                        <li class="ml-4 list-disc">本プロジェクトは、本プロジェクトが必要と認めた場合は、本規約を変更できるものとします。</li>
+                        <li class="ml-4 list-disc">本規約を変更する場合、本プロジェクトは、本サービス上での掲示その他の適切な方法により周知し、あらかじめ変更後の本規約の内容および効力発生時期を通知します。なお、ユーザーが通知において指定された期日以後に本サービスを利用した場合には、法令上その効力を否定される場合を除き、変更後の本規約に同意したものとされます。</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第6条 言語および準拠法</h3>
+                    <p>
+                    本規約の正文は日本語とし、本規約の翻訳版と日本語版に相違がある場合は、日本語版が優先されます。本規約の準拠法は日本法とします。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">第7条 お問い合わせ先</h3>
+                    <p>
+                        利用規約に関するお問い合わせは、<a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせフォーム</a>までお願いいたします。
+                    </p>
+
+                    <p class="pt-6 text-xs text-slate-500">制定日：2025年12月12日</p>
+                </div>
+            </section>
+
+            <section id="privacypolicy" class="pt-32">
+                <h2 class="text-3xl font-serif font-bold text-slate-800 mb-6 border-b border-gray-300 pb-2">
+                    プライバシーポリシー
+                </h2>
+                <div class="text-slate-700 space-y-4 text-sm leading-relaxed">
+                    <p>
+                        本ウェブサイト上で提供するサービス（以下「本サービス」といいます）における、ユーザーの個人情報（個人情報の保護に関する法律（平成15年5月30日法律第57号。以下「個人情報保護法」といいます）第2条に定める個人情報をいいます）を含むユーザー情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本プライバシーポリシー」といいます）を定めます。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">1. 取得する情報とその利用目的</h3>
+                    <p>
+                        当プロジェクトが収集する情報、およびその利用目的は以下の通りです。
+                    </p>
+                    <ul>
+                        <li class="ml-4 list-disc">専用フォーム経由でのデータ提供時:
+                            写真ファイル・動画ファイル・および提供者が任意で提供した撮影日時・場所・思い出等のテキスト。これらは見附島に関するデジタルアーカイブの構築及び学術研究・広報目的にのみ使用されます。収集した映像および静止画のうち、人物の容姿等を含むものについては、当該部分を識別できないよう加工を行うか、切り抜くか、もしくはそれ以降の利用対象から除外した上でタイムラプス動画の生成や公開を行います。
+                        </li>
+                        <li class="ml-4 list-disc">自動的に収集される技術情報: 本ウェブページではアクセス状況の分析にCloudflare Web Analyticsを利用しています。得られた統計情報はサービス改善およびセキュリティ維持・不正利用防止のために利用される場合があります。
+                        </li>
+                        <li class="ml-4 list-disc">お問い合わせフォームの入力内容：お問い合わせ内容に基づき対応するために利用します。</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">2. 個人情報の第三者提供</h3>
+                    <p>
+                        当プロジェクトは、法令に基づく場合を除き、あらかじめユーザーの同意を得ることなく、個人情報を第三者に提供することはありません。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">3. 本プライバシーポリシーの変更等</h3>
+                    <p>
+                        本プロジェクトは、本プライバシーポリシーを変更する場合には、変更後の本プライバシーポリシーの施行時期および内容を本プロジェクトのウェブサイト上での表示その他の適切な方法により周知します。
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">5. お問い合わせ先</h3>
+                    <p>
+                        プライバシーポリシーに関するお問い合わせは、<a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせフォーム</a>までお願いいたします。
+                    </p>
+                    <p class="pt-6 text-xs text-slate-500">制定日：2025年12月12日</p>
+                </div>
+            </section>
         </div>
-      </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span data-i18n="footerCopyright">© 2024 見附島アーカイブ</span>
-        <a href="terms.html" data-i18n="footerTerms">利用規約</a>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-ice border-t border-slate-200 pt-20 pb-10">
+        <div class="container mx-auto px-6 max-w-8xl">
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <div class="md:w-1/3 space-y-4">
+                    <h4 class="font-sans text-slate-500">見附島アーカイブ</h4>
+                    <div class="text-xs text-slate-500 leading-relaxed space-y-1">
+                        <p>運営：大伏 仙泰<br>東京大学先端科学技術研究センター・珠洲市出身</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-sm text-slate-600 leading-relaxed font-light font-serif">
+                        「能登や被災されたすべての方々への関心が、短期的な『ニュース』で終わらず、長く続いていくこと」を願っています。
+                        見附島での思い出が詰められた皆さまの写真一枚一枚が、その大きな力になります。
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="./terms.html#terms" class="hover:text-accent transition-colors">利用規約</a>
+                    <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">プライバシーポリシー</a>
+                    <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
-  </body>
+    <script>
+        // Icons
+        lucide.createIcons();
+
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', toggleMenu);
+        }
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+</body>
+
 </html>
