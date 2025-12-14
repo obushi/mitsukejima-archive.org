@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Mitsukejima Archive">
+    <meta property="og:title" content="Terms of Use and Privacy Policy">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mitsukejima-archive.org/">
+    <meta property="og:image" content="https://mitsukejima-archive.org/media/ogp.webp">
+    <meta property="og:description" content="The Terms of Use and Privacy Policy of Mitsukejima Archive.">
+    <title>Mitsukejima Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="icon" type="image/png" href="./media/logo.svg">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="antialiased">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white/95 backdrop-blur-xl shadow-sm border-gray-200 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-slate-600 p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="./index.html#condition" class="text-2xl text-slate-800 mobile-link active:text-accent">Mitsukejima today</a>
+        <a href="./index.html#timelapse" class="text-2xl text-slate-800 mobile-link active:text-accent">Time-lapse</a>
+        <a href="./index.html#contribute" class="text-2xl text-slate-800 mobile-link active:text-accent">Join</a>
+
+        <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+            <select onchange="if(this.value) window.location.href=this.value"
+                class="bg-transparent focus:outline-none cursor-pointer">
+                <option value="" disabled hidden selected>Language</option>
+                <option value="/">日本語</option>
+                <option value="/en/index.html">English</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-white/95 backdrop-blur-xl shadow-sm border-gray-200 group">
+        <div class="container mx-auto px-6 py-2 md:py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group/logo transition-opacity hover:opacity-80">
+                <img src="./media/logo.svg" alt="Mitsukejima Archive Logo"
+                    class="w-12 h-12 object-contain transition-all duration-300 drop-shadow-md drop-shadow-none">
+                <span class="font-sans tracking-widest text-lg font-normal drop-shadow-md text-black drop-shadow-none">
+                    Mitsukejima Archive
+                </span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex gap-8 text-base tracking-widest text-gray-900 font-bold drop-shadow-none">
+                <a href="./index.html#condition"
+                    class="active:text-white active:text-accent transition-colors">Mitsukejima today</a>
+                <a href="./index.html#timelapse"
+                    class="active:text-white active:text-accent transition-colors">Time-lapse</a>
+                <a href="./index.html#contribute"
+                    class="active:text-white active:text-accent transition-colors">Join</a>
+            </nav>
+
+            <!-- Language (Desktop) -->
+            <div class="hidden md:flex items-center gap-1 drop-shadow-md text-gray-900 drop-shadow-none">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+                <select onchange="if(this.value) window.location.href=this.value"
+                    class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer appearance-none py-1 pr-2 pl-1 hover:text-accent hover:text-accent transition-colors">
+                    <option value="" disabled hidden selected>Language</option>
+                    <option value="/" class="text-black">日本語</option>
+                    <option value="/en/index.html" class="text-black">English</option>
+                </select>
+            </div>
+
+            <!-- Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-800 drop-shadow-none" aria-label="Open menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-16 bg-ice">
+        <div class="container mx-auto px-6 max-w-4xl">
+
+            <div class="mb-16">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-2">
+                    Terms of Use and Privacy Policy
+                </h1>
+            </div>
+
+            <!-- Terms Section -->
+            <section id="terms" class="mt-[-100px] pt-[100px]">
+                <h2 class="text-3xl font-serif font-bold text-slate-800 mb-6 border-b border-gray-300 pb-2">
+                    Terms of Use
+                </h2>
+                <div class="text-slate-700 space-y-4 text-sm leading-relaxed">
+                    <p>
+                        This “Mitsukejima Archive Project” (the “Project”) aims to record long-term changes in Mitsukejima and the surrounding area. All users of this service are deemed to have agreed to the following Terms of Use.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 1. Purpose and Scope of Use</h3>
+                    <p>
+                        The Project collects photo and video data provided by users, information about the provider’s attributes, and memories (collectively, the “Provided Data”), and uses them for recording and analyzing long-term changes of Mitsukejima, building 3D scenes, and disseminating information related to the Project. The Project may publish or provide to specific parties the Project outputs (including collected materials, time-lapse videos, and 3D scenes). If a user chooses not to permit publication of their Provided Data within this service, the user’s Provided Data will not be published.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 2. Rights in the Provided Data and How It Is Used/Published</h3>
+                    <p>
+                        These matters are specified separately in the
+                        <a href="https://drive.google.com/file/d/1cWYjKkUBJ6o0dGC-zpih-MT_se9YEB_u/view?usp=drive_link" target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">Consent Form for Providing Materials to “Mitsukejima Archive”</a>.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 3. Prohibited Conduct</h3>
+                    <p>
+                        The following conduct is prohibited:
+                    </p>
+                    <ul>
+                        <li class="ml-4 list-disc">Any act that violates these Terms or applicable laws and regulations</li>
+                        <li class="ml-4 list-disc">Any act that may offend public order or good morals</li>
+                        <li class="ml-4 list-disc">Providing benefits to, or otherwise cooperating with, anti-social forces</li>
+                        <li class="ml-4 list-disc">Any act that infringes copyrights or other intellectual property rights, portrait rights, privacy, reputation, or other rights or interests of the Project, other users, or third parties</li>
+                        <li class="ml-4 list-disc">Using this service for purposes different from the intended purposes of this service</li>
+                        <li class="ml-4 list-disc">Any act that interferes with the operation of this service or use of this service by other users</li>
+                        <li class="ml-4 list-disc">Transmitting computer viruses or other harmful computer programs</li>
+                        <li class="ml-4 list-disc">Modifying, adapting, reverse-engineering, or otherwise altering any content, data, software, etc. provided through this service</li>
+                        <li class="ml-4 list-disc">Tampering with or deleting information of the Project</li>
+                        <li class="ml-4 list-disc">Impersonating the Project, other users, or any third party</li>
+                        <li class="ml-4 list-disc">Any act equivalent to any of the foregoing</li>
+                        <li class="ml-4 list-disc">Assisting or encouraging any of the foregoing</li>
+                        <li class="ml-4 list-disc">Any other act that the Project determines may fall under any of the foregoing, or that the Project deems inappropriate</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 4. Disclaimer</h3>
+                    <p>
+                        The Project makes no warranties whatsoever regarding the authenticity, accuracy, or completeness of the Project outputs. The Project shall not be liable for any damages arising from the use of, or inability to use, this service.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 5. Amendments</h3>
+                    <ul>
+                        <li class="ml-4 list-disc">The Project may amend these Terms when the Project deems it necessary.</li>
+                        <li class="ml-4 list-disc">When amending these Terms, the Project will notify users in advance of the content of the amended Terms and the effective date by posting on this service or by other appropriate means. If a user uses this service on or after the date specified in such notice, the user is deemed to have agreed to the amended Terms, unless the effectiveness is denied under applicable law.</li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 6. Language and Governing Law</h3>
+                    <p>
+                        The Japanese version of these Terms is the authoritative text. In the event of any inconsistency between a translated version and the Japanese version, the Japanese version shall prevail. These Terms shall be governed by the laws of Japan.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">Article 7. Contact</h3>
+                    <p>
+                        For inquiries regarding these Terms of Use, please use the
+                        <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">contact form</a>.
+                    </p>
+
+                    <p class="pt-6 text-xs text-slate-500">Established: December 12, 2025</p>
+                </div>
+            </section>
+
+            <section id="privacypolicy" class="pt-32">
+                <h2 class="text-3xl font-serif font-bold text-slate-800 mb-6 border-b border-gray-300 pb-2">
+                    Privacy Policy
+                </h2>
+                <div class="text-slate-700 space-y-4 text-sm leading-relaxed">
+                    <p>
+                        This Privacy Policy (the “Privacy Policy”) sets forth the handling of user information, including personal information (as defined in Article 2 of the Act on the Protection of Personal Information (Act No. 57 of May 30, 2003; the “APPI”)), in connection with services provided on this website (the “Service”).
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">1. Information We Collect and Purposes of Use</h3>
+                    <p>
+                        The information collected by the Project and its purposes of use are as follows:
+                    </p>
+                    <ul>
+                        <li class="ml-4 list-disc"><span class="font-semibold">When providing data via the dedicated form:</span>
+                            Photo files, video files, and (optionally) text such as the date/time and location of shooting and memories provided by the contributor. These are used only for building a digital archive related to Mitsukejima and for academic research and public communication purposes. Among the collected videos and still images, those that include identifiable features of individuals may be processed to prevent identification, cropped, or otherwise excluded from further use before generating or publishing time-lapse videos.
+                        </li>
+                        <li class="ml-4 list-disc"><span class="font-semibold">Automatically collected technical information:</span>
+                            This website uses Cloudflare Web Analytics to analyze access and usage. The resulting statistical information may be used to improve the service, maintain security, and prevent misuse.
+                        </li>
+                        <li class="ml-4 list-disc"><span class="font-semibold">Content entered in the contact form:</span>
+                            Used to respond to inquiries based on the content submitted.
+                        </li>
+                    </ul>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">2. Provision of Personal Information to Third Parties</h3>
+                    <p>
+                        The Project will not provide personal information to third parties without the user’s prior consent, except as required by applicable laws and regulations.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">3. Changes to This Privacy Policy</h3>
+                    <p>
+                        If the Project changes this Privacy Policy, the Project will announce the effective date and the updated content by displaying it on the Project website or by other appropriate means.
+                    </p>
+
+                    <h3 class="font-bold text-lg pt-4 text-slate-800">4. Contact</h3>
+                    <p>
+                        For inquiries regarding this Privacy Policy, please use the
+                        <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">contact form</a>.
+                    </p>
+                    <p class="pt-6 text-xs text-slate-500">Established: December 12, 2025</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ice border-t border-slate-200 pt-20 pb-10">
+        <div class="container mx-auto px-6 max-w-8xl">
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <div class="md:w-1/3 space-y-4">
+                    <p class="font-sans text-slate-500">Mitsukejima Archive</p>
+                    <div class="text-xs text-slate-500 leading-relaxed space-y-1">
+                        <p>Operated by: Noriyasu Obushi<br>The University of Tokyo, RCAST / From Suzu City</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-sm text-slate-600 leading-relaxed font-light font-serif">
+                        We hope that “concern for Noto and everyone affected by the disaster” does not end as short-term “news,” but continues for the long run.
+                        Every single photo filled with memories of Mitsukejima can be a powerful part of that.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
+                    <a href="./terms.html#terms" class="hover:text-accent transition-colors">Terms of Use</a>
+                    <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">Privacy Policy</a>
+                    <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Icons
+        lucide.createIcons();
+
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', toggleMenu);
+        }
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+</body>
+
+</html>

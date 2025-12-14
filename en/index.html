@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:site_name" content="見附島アーカイブ | Mitsukejima Archive">
-    <meta property="og:title" content="見附島を定点観測してタイムラプスを作ろう">
+    <meta property="og:site_name" content="Mitsukejima Archive">
+    <meta property="og:title" content="Create a time-lapse by observing Mitsukejima from a fixed point">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mitsukejima-archive.org/">
     <meta property="og:image" content="https://mitsukejima-archive.org/media/ogp.webp">
-    <meta property="og:description" content="能登半島地震で姿を変えた、石川県珠洲市の見附島を定点観測する参加型プロジェクトです。">
-    <title>見附島アーカイブ | Mitsukejima Archive</title>
+    <meta property="og:description" content="A participatory project to observe Mitsukejima in Suzu City, Ishikawa Prefecture—an island whose shape was altered by the Noto Peninsula Earthquake.">
+    <title>Mitsukejima Archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./tailwind.css">
-    <link rel="icon" type="image/png" href="./media/logo.svg">
+    <link rel="stylesheet" href="../tailwind.css">
+    <link rel="icon" type="image/png" href="../media/logo.svg">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -28,11 +28,11 @@
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <a href="./index.html#condition"
-            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">見附島のいま</a>
+            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">Mitsukejima today</a>
         <a href="./index.html#timelapse"
-            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">タイムラプス</a>
+            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">Time-lapse</a>
         <a href="./index.html#contribute"
-            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">参加する</a>
+            class="text-2xl text-slate-800 mobile-link active:text-accent transition-colors">Join</a>
 
         <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
             <i data-lucide="globe" class="w-6 h-6"></i>
@@ -50,26 +50,26 @@
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent group">
         <div class="container mx-auto px-6 py-2 md:py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-3 group/logo transition-opacity hover:opacity-80">
-                <img src="./media/logo.svg" alt="Mitsukejima Archive Logo"
+                <img src="../media/logo.svg" alt="Mitsukejima Archive Logo"
                     class="w-12 h-12 object-contain transition-all duration-300 drop-shadow-md group-[.scrolled]:drop-shadow-none">
                 <span
                     class="font-sans tracking-widest text-lg font-normal text-white drop-shadow-md transition-colors duration-300 group-[.scrolled]:text-black group-[.scrolled]:drop-shadow-none">
-                    見附島アーカイブ
+                    Mitsukejima Archive
                 </span>
             </a>
 
-            <!-- ナビゲーション -->
+            <!-- Navigation -->
             <nav
                 class="hidden md:flex gap-8 text-base tracking-widest text-white/90 drop-shadow-md font-medium transition-colors duration-300 group-[.scrolled]:text-gray-900 group-[.scrolled]:font-bold group-[.scrolled]:drop-shadow-none">
                 <a href="./index.html#condition"
-                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">見附島のいま</a>
+                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">Mitsukejima today</a>
                 <a href="./index.html#timelapse"
-                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">タイムラプス</a>
+                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">Time-lapse</a>
                 <a href="./index.html#contribute"
-                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">参加する</a>
+                    class="active:text-white group-[.scrolled]:active:text-accent transition-colors">Join</a>
             </nav>
 
-            <!-- 言語選択 (PC用) -->
+            <!-- Language (Desktop) -->
             <div
                 class="hidden md:flex items-center gap-1 text-white/90 drop-shadow-md transition-colors duration-300 group-[.scrolled]:text-gray-900 group-[.scrolled]:drop-shadow-none">
                 <i data-lucide="globe" class="w-4 h-4"></i>
@@ -81,7 +81,7 @@
                 </select>
             </div>
 
-            <!-- メニューボタン -->
+            <!-- Menu Button -->
             <button id="mobile-menu-btn"
                 class="md:hidden text-white drop-shadow-md group-[.scrolled]:text-gray-800 group-[.scrolled]:drop-shadow-none"
                 aria-label="Open menu">
@@ -94,20 +94,20 @@
         <!-- Hero Section -->
         <section id="hero"
             class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center px-4">
-            <!-- 背景動画 (Hero Section Only) -->
+            <!-- Background video (Hero Section Only) -->
             <div class="absolute inset-0 z-0">
                 <video autoplay loop muted playsinline
                     class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-75 grayscale-[0%]">
-                    <source src="./media/mitsukejima-overview.webm" type="video/webm">
+                    <source src="../media/mitsukejima-overview.webm" type="video/webm">
                 </video>
-                <!-- グラデーションオーバーレイ -->
+                <!-- Gradient overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-ice via-transparent to-transparent z-10"></div>
                 <div class="absolute inset-0 bg-white/10 z-10"></div>
             </div>
 
-            <!-- コンテンツ -->
+            <!-- Content -->
             <div class="relative p-6 md:p-12 animate-float text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] z-10">
-                <!-- Viewfinder Corners (L字枠) -->
+                <!-- Viewfinder Corners -->
                 <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white/80"></div>
                 <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-white/80"></div>
                 <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-white/80"></div>
@@ -117,20 +117,19 @@
                     Mitsukejima Digital Archive
                 </p>
                 <h1 class="font-sans font-medium tracking-widest mb-6 leading-tight">
-                    <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">見附島を定点観測して</span>
-                    <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">タイムラプスを作ろう</span>
+                    <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">Observe Mitsukejima and</span>
+                    <span class="block whitespace-nowrap text-[clamp(1.5rem,6vw,4.5rem)]">create a time-lapse together</span>
                 </h1>
                 <p class="text-left text-sm md:text-lg font-sans font-medium tracking-wider leading-relaxed">
-                    能登半島地震により大規模崩落した、石川県
-                    <ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市のシンボル・見附島。<br>
-                    みんなの写真で変化を追跡し、未来へ残すための、参加型プロジェクトです。
+                    Mitsukejima, a symbol of Suzu City, Ishikawa Prefecture, suffered a major collapse during the 2024 Noto earthquake.<br>
+                    This is a participatory project to track its changes through everyone's photos and preserve them for the future.
                 </p>
 
-                <!-- スマホ用 参加ボタン -->
+                <!-- Join button (Mobile) -->
                 <div class="mt-8 md:hidden">
                     <a href="#contribute"
                         class="inline-flex items-center gap-2 px-6 py-3 bg-accent/90 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-bold shadow-lg transition-transform hover:scale-105">
-                        <span>参加する</span>
+                        <span>Join</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -149,21 +148,21 @@
                     <div class="md:w-1/3 relative h-[300px] md:h-[500px] w-full reveal select-none group rounded-2xl overflow-hidden shadow-2xl comparison-slider"
                         id="comparison-container">
                         <div class="absolute inset-0 w-full h-full z-0">
-                            <img src="./media/after.webp" class="w-full h-full object-cover grayscale-[10%]"
-                                alt="2025年8月の見附島">
+                            <img src="../media/after.webp" class="w-full h-full object-cover grayscale-[10%]"
+                                alt="Mitsukejima in August 2025">
                         </div>
                         <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10"
                             id="comparison-overlay">
-                            <img src="./media/before.webp" class="h-full object-cover max-w-none"
-                                id="comparison-image-before" alt="2023年11月の見附島" style="width: 100%;">
+                            <img src="../media/before.webp" class="h-full object-cover max-w-none"
+                                id="comparison-image-before" alt="Mitsukejima in November 2023" style="width: 100%;">
                         </div>
                         <div
                             class="absolute bottom-4 left-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-slate-700 z-20 pointer-events-none whitespace-nowrap">
-                            震災前 2023年11月
+                            Before the earthquake (Nov 2023)
                         </div>
                         <div
                             class="absolute bottom-4 right-4 frosted-glass px-3 py-1 rounded text-[10px] font-bold tracking-widest text-slate-700 z-20 pointer-events-none whitespace-nowrap">
-                            震災後 2025年8月
+                            After the earthquake (Aug 2025)
                         </div>
                         <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30"
                             id="comparison-handle">
@@ -176,34 +175,35 @@
 
                     <div class="md:w-1/2 space-y-6 reveal">
                         <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800">
-                            いま見附島で起きていること
+                            What’s happening at Mitsukejima now
                         </h2>
                         <div
                             class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify">
                             <p>
-                                2024年元日の能登半島地震により、見附島が位置する石川県<ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市は震度6強の揺れに見舞われました。
-                                左の写真は震災前（2023年11月）、右の写真は震災後の姿（2025年8月）に撮影されたものです。
-                                スライダーを動かすことで、その変化を比較できます。
+                                The Noto Peninsula Earthquake on January 1, 2024 caused strong shaking (seismic intensity 6+) in Suzu City, Ishikawa Prefecture, where Mitsukejima is located.
+                                The photo on the left was taken before the earthquake (Nov 2023), and the photo on the right shows the island after the earthquake (Aug 2025).
+                                Move the slider to compare the changes.
                             </p>
                             <p>
-                                石川県立大らで作るプロジェクトチームによると、体積の約2割が崩落しました<sup>[1]</sup>。
-                                しかし、これは「終わり」ではありません。崩れた斜面により面積は約8割増加<sup>[1]</sup>し、
-                                崩れた斜面では日々草木の変化が起き始めています。
-                                <span class="bg-accent/10 text-accent px-1 font-medium">島頂部の枯れ木が目立つ一方で、新たな発芽も見つかり</span><sup>[2]</sup>、<span class="bg-accent/10 text-accent px-1 font-medium">森林の再生も進んでいます</span><sup>[3, 4]</sup>。
+                                According to a project team led by Ishikawa Prefectural University, about 20% of the island’s volume collapsed<sup>[1]</sup>.
+                                But this is not “the end.” The landslide slope increased the island’s total area by about 80%<sup>[1]</sup>,
+                                and daily changes in vegetation have begun on the newly exposed slope.
+                                <span class="bg-accent/10 text-accent px-1 font-medium">While dead trees stand out on the summit, new sprouts have also been found</span><sup>[2]</sup>, and
+                                <span class="bg-accent/10 text-accent px-1 font-medium">forest regeneration is progressing</span><sup>[3, 4]</sup>.
                             </p>
                         </div>
                         <div class="flex gap-4 pt-4">
                             <div class="frosted-glass px-4 py-3 rounded-lg text-center w-1/3">
                                 <span class="block text-2xl font-serif text-slate-800">-60%</span>
-                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">島頂部の面積</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">Summit area</span>
                             </div>
                             <div class="frosted-glass px-4 py-3 rounded-lg text-center w-1/3">
                                 <span class="block text-2xl font-serif text-accent">+80%</span>
-                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">総面積の増加</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">Total area increase</span>
                             </div>
                             <div class="frosted-glass px-4 py-3 rounded-lg text-center w-1/3">
                                 <span class="block text-2xl font-serif text-slate-800">-20%</span>
-                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">体積の減少</span>
+                                <span class="text-[10px] text-slate-500 uppercase tracking-wider">Volume decrease</span>
                             </div>
                         </div>
                     </div>
@@ -219,41 +219,41 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center max-w-2xl mx-auto mb-10 reveal">
                     <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">
-                        タイムラプスで変化を記録
+                        Record change with a time-lapse
                     </h2>
                     <div
                         class="space-y-6 text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify">
                         <p>
-                            「ゆっくり進む変化」は、日々見ていると気づきにくいものです。
-                            皆さまの写真を結集し、記録をつなぎ合わせることで、
-                            <span class="bg-accent/10 text-accent px-1 font-medium">見附島の変化を可視化する「タイムラプス動画」を作成</span>します。
+                            Slow change can be hard to notice when you see it every day.
+                            By bringing together everyone’s photos and connecting the record over time,
+                            we will <span class="bg-accent/10 text-accent px-1 font-medium">create time-lapse videos that visualize Mitsukejima’s changes</span>.
                         </p>
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6 max-w-8xl mx-auto">
-                    <!-- Card 1: 再生の記録 (Comparison Slider) -->
+                    <!-- Card 1: Regeneration record (Comparison Slider) -->
                     <article
                         class="frosted-glass p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1 reveal flex flex-col">
                         <div class="aspect-video w-full rounded-xl overflow-hidden shadow-inner relative comparison-slider mb-4 bg-gray-200"
                             id="regeneration-container">
                             <div class="absolute inset-0 w-full h-full z-0">
-                                <img src="./media/timelapse-after.webp" class="w-full h-full object-cover"
-                                    alt="再生後の斜面のイメージ">
+                                <img src="../media/timelapse-after.webp" class="w-full h-full object-cover"
+                                    alt="Image of the slope after regeneration">
                             </div>
                             <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10"
                                 id="regeneration-overlay">
-                                <img src="./media/timelapse-before.webp" class="h-full object-cover max-w-none"
-                                    id="regeneration-image-before" alt="現在の岩肌" style="width: 100%;">
+                                <img src="../media/timelapse-before.webp" class="h-full object-cover max-w-none"
+                                    id="regeneration-image-before" alt="Bare rock at present" style="width: 100%;">
                             </div>
 
                             <div
                                 class="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">
-                                2024年2月
+                                Feb 2024
                             </div>
                             <div
                                 class="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">
-                                2025年8月
+                                Aug 2025
                             </div>
                             <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30"
                                 id="regeneration-handle">
@@ -266,10 +266,10 @@
                         <div class="px-2 pb-2">
                             <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
                                 <i data-lucide="sprout" class="w-4 h-4 text-accent"></i>
-                                再生の記録
+                                Regeneration record
                             </h3>
                             <p class="text-sm text-slate-500 leading-relaxed">
-                                見附島では今後5年から10年で樹木が再生していく可能性があります<sup>[2]</sup>。緑がどのように戻っていくか、島の生命力を記録します。季節によって変動する斜面の緑の定点観測にも挑戦します。
+                                Trees on Mitsukejima may regenerate over the next 5 to 10 years<sup>[2]</sup>. We will record how the greenery returns and document the island’s resilience, including fixed-point observations of the slope’s seasonal changes.
                             </p>
                         </div>
                     </article>
@@ -280,18 +280,18 @@
                         style="transition-delay: 100ms;">
                         <div
                             class="aspect-video w-full rounded-xl overflow-hidden bg-gray-100 mb-4 relative shadow-inner">
-                            <img src="./media/mitsukejima_thumbnail.webp"
+                            <img src="../media/mitsukejima_thumbnail.webp"
                                 class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
-                                alt="Time-lapse Mining イメージ">
+                                alt="Time-lapse mining image">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                         </div>
                         <div class="px-2 pb-2">
                             <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
                                 <i data-lucide="folder-clock" class="w-4 h-4 text-accent"></i>
-                                写真収集
+                                Photo collection
                             </h3>
                             <p class="text-sm text-slate-500 leading-relaxed">
-                                色合いや画角が異なる写真群から、画像処理を用いて「時間の変化」を抽出し、タイムラプス映像を生成します。変化が著しい見附島では、膨大な枚数を必要とします。みなさまのご協力が必要です。
+                                From a large set of photos with different colors and compositions, we use image processing to extract “change over time” and generate time-lapse footage. Because Mitsukejima is changing rapidly, we need a huge number of photos—your help is essential.
                             </p>
                         </div>
                     </article>
@@ -311,10 +311,10 @@
                         <div class="px-2 pb-2">
                             <h3 class="text-lg font-serif mb-2 text-slate-700 flex items-center gap-2">
                                 <i data-lucide="clapperboard" class="w-4 h-4 text-accent"></i>
-                                タイムラプス・マイニング
+                                Time-lapse mining
                             </h3>
                             <p class="text-sm text-slate-500 leading-relaxed">
-                                インターネット上の写真からタイムラプスを生成する手法に関する論文<sup>[3]</sup>が2015年に発表されました。本手法等を参考に、収集した写真に基づくタイムラプスの生成に取り組みます。
+                                In 2015, a paper was published on methods to generate time-lapse videos from internet photos<sup>[3]</sup>. We will refer to such approaches and work on generating time-lapses based on the photos we collect.
                             </p>
                         </div>
                     </article>
@@ -333,30 +333,30 @@
                                     style="transition-delay: 200ms;">
                                     <div class="aspect-video w-full rounded-xl overflow-hidden bg-black mb-4 relative shadow-inner group"
                                         id="viewer-container">
-                                        <!-- 背景 (After/Current) -->
+                                        <!-- Background (After/Current) -->
                                         <div class="absolute inset-0 w-full h-full z-0">
                                             <video class="w-full h-full object-cover" autoplay muted loop playsinline
                                                 preload="metadata">
-                                                <source src="./media/damage-after.webm" type="video/webm">
+                                                <source src="../media/damage-after.webm" type="video/webm">
                                             </video>
                                         </div>
-                                        <!-- 前景 (Before/Past) -->
+                                        <!-- Foreground (Before/Past) -->
                                         <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10"
                                             id="viewer-overlay">
                                             <video id="viewer-image-before" class="w-full h-full max-w-none" autoplay
                                                 muted loop playsinline preload="metadata">
-                                                <source src="./media/damage-before.webm" type="video/webm">
+                                                <source src="../media/damage-before.webm" type="video/webm">
                                             </video>
                                         </div>
                                         <!-- Label (Past) -->
                                         <div
                                             class="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">
-                                            2022年6月20日撮影
+                                            Filmed on Jun 20, 2022
                                         </div>
                                         <!-- Label (Current) -->
                                         <div
                                             class="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-0.5 rounded text-[8px] font-bold tracking-widest z-20 pointer-events-none">
-                                            2025年5月26日撮影
+                                            Filmed on May 26, 2025
                                         </div>
                                         <!-- Handle -->
                                         <div class="absolute top-0 bottom-0 left-[50%] w-1 bg-white/50 cursor-ew-resize flex items-center justify-center z-30"
@@ -372,25 +372,26 @@
                             <aside class="xl:w-1/3 w-full p-8 md:p-12 flex flex-col justify-between bg-white">
                                 <div>
                                     <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-6">
-                                        3Dシーンの構築
+                                        Building 3D scenes
                                     </h2>
                                     <p
                                         class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify mb-6">
-                                        タイムラプス動画に加え、空撮映像から3次元シーンを復元する技術 (3D Gaussian Splatting<sup>[4]</sup>)
-                                        を使用し、見附島の姿を3Dデータとしても記録します。「デジタル復元」を目的とする類似の先行事例には2019年首里城火災後に開始された「みんなの首里城デジタル復元プロジェクト」<sup>[5]</sup>があります。本プロジェクトではドローンによる空撮動画を利用します。
+                                        In addition to time-lapse videos, we will also record Mitsukejima as 3D data using a technique that reconstructs 3D scenes from aerial footage (3D Gaussian Splatting<sup>[4]</sup>).
+                                        A similar precedent aimed at “digital reconstruction” is the “OUR Shurijo: Everyone’s Shurijo Digital Reconstruction Project,” launched after the 2019 Shuri Castle fire<sup>[5]</sup>.
+                                        In this project, we use drone footage.
                                     </p>
                                     <div class="text-sm font-bold text-slate-700 flex flex-col">
                                         <div class="flex items-center gap-2">
                                             <i data-lucide="rotate-3d" class="w-4 h-4 text-accent"></i>
-                                            <span>作成した3Dシーン (外部サイト)</span>
+                                            <span>Created 3D scenes (external site)</span>
                                         </div>
                                         <ul class="list-disc pl-5 space-y-1 text-sm font-light text-slate-600">
                                             <li><a href="https://superspl.at/s?id=b865d8e8" target="_blank"
-                                                    class="hover:text-accent hover:underline">2022年6月20日撮影分</a></li>
+                                                    class="hover:text-accent hover:underline">Filmed on Jun 20, 2022</a></li>
                                             <li><a href="https://superspl.at/view?id=e11c4ec1" target="_blank"
-                                                    class="hover:text-accent hover:underline">2025年5月26日撮影分</a></li>
+                                                    class="hover:text-accent hover:underline">Filmed on May 26, 2025</a></li>
                                             <li><a href="https://superspl.at/view?id=e937bd82" target="_blank"
-                                                    class="hover:text-accent hover:underline">2025年8月13日撮影分</a></li>
+                                                    class="hover:text-accent hover:underline">Filmed on Aug 13, 2025</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -398,10 +399,10 @@
                                 <div class="border-t border-slate-100 pt-6">
                                     <p class="text-sm font-bold text-slate-700 flex items-center gap-2 mb-2">
                                         <i data-lucide="camera" class="w-4 h-4 text-accent"></i>
-                                        ドローン動画募集中
+                                        Drone footage wanted
                                     </p>
                                     <p class="text-xs text-slate-400">
-                                        3Dデータ化のため、見附島の全周を撮影したドローン映像を探しています。
+                                        For 3D reconstruction, we are looking for drone footage that captures Mitsukejima from all around the island.
                                     </p>
                                 </div>
                             </aside>
@@ -419,21 +420,19 @@
                 </div>
 
                 <p class="text-3xl md:text-5xl font-serif text-slate-800 mb-8 leading-tight">
-                    あなたの写真が、<br>
-                    タイムラプスの一部になります
+                    Your photo<br>
+                    becomes part of the time-lapse
                 </p>
                 <p
                     class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify mb-12">
-                    いつ撮影されたものでも構いません。カメラやスマートフォンの中に眠る一枚が、
-                    かつての姿や繰り返す大地震による崩落、そして植生の変化と再生の過程を記録した、
-                    未来に残す価値のある貴重なデータです。
+                    Any date is welcome. A single photo sleeping in your camera roll can be precious data worth preserving for the future—capturing what Mitsukejima once looked like, the collapses caused by recurring major earthquakes, and the process of vegetation change and regeneration.
                 </p>
 
                 <button
                     class="bg-accent/90 text-white px-12 py-5 rounded-full text-sm font-bold tracking-widest hover:bg-accent hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center gap-3 mx-auto"
-                    onclick="location.href='https://holly-lamprey-c26.notion.site/296df00d58f38089a20ec85f59aefd3b'">
+                    onclick="location.href='https://holly-lamprey-c26.notion.site/2b9df00d58f3803abd28fe2ca6c86d1a'">
                     <i data-lucide="image-plus" class="w-5 h-5"></i>
-                    写真をアップロード
+                    Upload photos
                 </button>
             </div>
         </section>
@@ -444,32 +443,32 @@
         <div class="container mx-auto px-6 max-w-8xl">
             <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
                 <div class="md:w-1/3 space-y-4">
-                    <p class="font-sans text-slate-500">見附島アーカイブ</p>
+                    <p class="font-sans text-slate-500">Mitsukejima Archive</p>
                     <div class="text-xs text-slate-500 leading-relaxed space-y-1">
-                        <p>運営：大伏 仙泰<br>東京大学先端科学技術研究センター・珠洲市出身</p>
+                        <p>Operated by: Noriyasu Obushi<br>The University of Tokyo, RCAST / From Suzu City</p>
                     </div>
                 </div>
                 <div class="md:w-1/2">
                     <p class="text-sm text-slate-600 leading-relaxed font-light font-serif">
-                        「能登や被災されたすべての方々への関心が、短期的な『ニュース』で終わらず、長く続いていくこと」を願っています。
-                        見附島での思い出が詰められた皆さまの写真一枚一枚が、その大きな力になります。
+                        We hope that “concern for Noto and everyone affected by the disaster” does not end as short-term “news,” but continues for the long run.
+                        Every single photo filled with memories of Mitsukejima can be a powerful part of that.
                     </p>
                 </div>
             </div>
 
-            <!-- 参考文献 -->
+            <!-- References -->
             <section class="max-w-8xl mx-auto reveal" aria-labelledby="references-heading">
                 <p id="references-heading" class="font-sans text-sm font-base text-slate-500 mb-2">
-                    参考文献
+                    References
                 </p>
                 <ul class="text-xs text-slate-400 leading-tight space-y-1">
-                    <li>[1] 「見附島の森 回復の芽」北國新聞 朝刊 2025年10月12日付</li>
-                    <li>[2] 「県立大、震災後初現地調査 樹木再生にお墨付き」北國新聞 朝刊 2025年9月2日付</li>
-                    <li>[3] 「見附島学術調査報告会」能登半島地震後を生きる <a href="https://note.com/ogachan_noto/n/nae99757d8418"
+                    <li>[1] “Mitsukejima’s Forest: Signs of Recovery,” Hokkoku Shimbun (morning edition), Oct 12, 2025.</li>
+                    <li>[2] “First Field Survey After the Earthquake: Prefectural University Confirms Tree Regeneration,” Hokkoku Shimbun (morning edition), Sep 2, 2025.</li>
+                    <li>[3] “Mitsukejima Academic Survey Report Meeting,” Living After the Noto Peninsula Earthquake. <a href="https://note.com/ogachan_noto/n/nae99757d8418"
                             target="_blank"
                             class="underline-offset-2 hover:text-accent hover:underline">https://note.com/ogachan_noto/n/nae99757d8418</a>
                     </li>
-                    <li>[4] 「見附島の植生 県立大が調査」北陸中日新聞 朝刊 2025年9月2日付</li>
+                    <li>[4] “Prefectural University Surveys Mitsukejima’s Vegetation,” Hokuriku Chunichi Shimbun (morning edition), Sep 2, 2025.</li>
                     <li>
                         [5] Ricardo Martin-Brualla, David Gallup, and Steven M. Seitz. 2015. Time-lapse mining from
                         internet photos. ACM Trans. Graph. 34, 4, Article 62 (August 2015).
@@ -487,7 +486,8 @@
                         </a>
                     </li>
                     <li>
-                        [7] 川上 玲. 2021. ７. OUR Shurijo みんなの首里城デジタル復元プロジェクト－記憶の収集－. 写真測量とリモートセンシング. 60, 3, 118–120.
+                        [7] Rei Kawakami. 2021. 7. OUR Shurijo: Everyone’s Shurijo Digital Reconstruction Project—Collecting Memories.
+                        Journal of the Japan Society of Photogrammetry and Remote Sensing. 60, 3, 118–120.
                         <a href="https://doi.org/10.4287/jsprs.60.118" target="_blank"
                             class="underline-offset-2 hover:text-accent hover:underline">
                             https://doi.org/10.4287/jsprs.60.118
@@ -499,10 +499,10 @@
             <div
                 class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
-                    <a href="./terms.html#terms" class="hover:text-accent transition-colors">利用規約</a>
-                    <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">プライバシーポリシー</a>
-                    <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせ</a>
+                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="../media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
+                    <a href="./terms.html#terms" class="hover:text-accent transition-colors">Terms of Use</a>
+                    <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">Privacy Policy</a>
+                    <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">Contact</a>
                 </div>
             </div>
         </div>
