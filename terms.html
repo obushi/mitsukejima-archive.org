@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用規約 見附島アーカイブ | Mitsukejima Archive</title>
-
+    <meta property="og:site_name" content="見附島アーカイブ | Mitsukejima Archive">
+    <meta property="og:title" content="利用規約およびプライバシーポリシー">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mitsukejima-archive.org/">
+    <meta property="og:image" content="https://mitsukejima-archive.org/media/ogp.webp">
+    <meta property="og:description" content="見附島アーカイブの利用規約およびプライバシーポリシーです。">
+    <title>見附島アーカイブ | Mitsukejima Archive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./tailwind.css">
-    <link rel="icon" type="image/png" href="./media/favicon.png">
-
-    <!-- Lucide Icons (CDN) -->
+    <link rel="icon" type="image/png" href="./media/logo.svg">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -202,7 +204,7 @@
         <div class="container mx-auto px-6 max-w-8xl">
             <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
                 <div class="md:w-1/3 space-y-4">
-                    <h4 class="font-sans text-slate-500">見附島アーカイブ</h4>
+                    <p class="font-sans text-slate-500">見附島アーカイブ</p>
                     <div class="text-xs text-slate-500 leading-relaxed space-y-1">
                         <p>運営：大伏 仙泰<br>東京大学先端科学技術研究センター・珠洲市出身</p>
                     </div>
@@ -215,9 +217,49 @@
                 </div>
             </div>
 
+            <!-- 参考文献 -->
+            <section class="max-w-8xl mx-auto reveal" aria-labelledby="references-heading">
+                <p id="references-heading" class="font-sans text-sm font-base text-slate-500 mb-2">
+                    参考文献
+                </p>
+                <ul class="text-xs text-slate-400 leading-tight space-y-1">
+                    <li>[1] 「見附島の森 回復の芽」北國新聞 朝刊 2025年10月12日付</li>
+                    <li>[2] 「県立大、震災後初現地調査 樹木再生にお墨付き」北國新聞 朝刊 2025年9月2日付</li>
+                    <li>[3] 「見附島学術調査報告会」能登半島地震後を生きる <a href="https://note.com/ogachan_noto/n/nae99757d8418"
+                            target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">https://note.com/ogachan_noto/n/nae99757d8418</a>
+                    </li>
+                    <li>[4] 「見附島の植生 県立大が調査」北陸中日新聞 朝刊 2025年9月2日付</li>
+                    <li>
+                        [5] Ricardo Martin-Brualla, David Gallup, and Steven M. Seitz. 2015. Time-lapse mining from
+                        internet photos. ACM Trans. Graph. 34, 4, Article 62 (August 2015).
+                        <a href="https://doi.org/10.1145/2766903" target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">
+                            https://doi.org/10.1145/2766903
+                        </a>
+                    </li>
+                    <li>
+                        [6] Bernhard Kerbl et al. 2023. 3D Gaussian Splatting for Real-Time Radiance Field Rendering.
+                        ACM Trans. Graph. 42, 4, Article 139 (August 2023).
+                        <a href="https://doi.org/10.1145/3592433" target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">
+                            https://doi.org/10.1145/3592433
+                        </a>
+                    </li>
+                    <li>
+                        [7] 川上 玲. 2021. ７. OUR Shurijo みんなの首里城デジタル復元プロジェクト－記憶の収集－. 写真測量とリモートセンシング. 60, 3, 118–120.
+                        <a href="https://doi.org/10.4287/jsprs.60.118" target="_blank"
+                            class="underline-offset-2 hover:text-accent hover:underline">
+                            https://doi.org/10.4287/jsprs.60.118
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
             <div
                 class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
                 <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
                     <a href="./terms.html#terms" class="hover:text-accent transition-colors">利用規約</a>
                     <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">プライバシーポリシー</a>
                     <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせ</a>

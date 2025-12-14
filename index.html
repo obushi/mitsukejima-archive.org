@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="見附島アーカイブ | Mitsukejima Archive">
+    <meta property="og:title" content="見附島を定点観測してタイムラプスを作ろう">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mitsukejima-archive.org/">
+    <meta property="og:image" content="https://mitsukejima-archive.org/media/ogp.webp">
+    <meta property="og:description" content="能登半島地震で姿を変えた、石川県珠洲市の見附島を定点観測する参加型プロジェクトです。">
     <title>見附島アーカイブ | Mitsukejima Archive</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./tailwind.css">
-    <link rel="icon" type="image/png" href="./media/favicon.png">
-
-    <!-- Lucide Icons (CDN) -->
+    <link rel="icon" type="image/png" href="./media/logo.svg">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -120,14 +122,11 @@
                 </h1>
                 <p class="text-left text-sm md:text-lg font-sans font-medium tracking-wider leading-relaxed">
                     能登半島地震により大規模崩落した、石川県
-                    <ruby>珠洲<rp>(</rp>
-                        <rt>すず</rt>
-                        <rp>)</rp>
-                    </ruby>市のシンボル・見附島。<br>
+                    <ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市のシンボル・見附島。<br>
                     みんなの写真で変化を追跡し、未来へ残すための、参加型プロジェクトです。
                 </p>
 
-                <!-- スマホ用 参加ボタン (md:hidden でPCでは非表示) -->
+                <!-- スマホ用 参加ボタン -->
                 <div class="mt-8 md:hidden">
                     <a href="#contribute"
                         class="inline-flex items-center gap-2 px-6 py-3 bg-accent/90 backdrop-blur-sm border border-white/20 text-white rounded-full text-sm font-bold shadow-lg transition-transform hover:scale-105">
@@ -147,7 +146,7 @@
         <section id="condition" class="py-8 md:py-32 px-6 bg-ice relative border-t border-slate-100">
             <div class="container mx-auto max-w-8xl">
                 <div class="flex flex-col md:flex-row gap-16 items-center">
-                    <div class="md:w-1/2 relative h-[300px] md:h-[500px] w-full reveal select-none group rounded-2xl overflow-hidden shadow-2xl comparison-slider"
+                    <div class="md:w-1/3 relative h-[300px] md:h-[500px] w-full reveal select-none group rounded-2xl overflow-hidden shadow-2xl comparison-slider"
                         id="comparison-container">
                         <div class="absolute inset-0 w-full h-full z-0">
                             <img src="./media/after.webp" class="w-full h-full object-cover grayscale-[10%]"
@@ -182,19 +181,15 @@
                         <div
                             class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify">
                             <p>
-                                2024年元日の能登半島地震により、見附島が位置する石川県
-                                <ruby>珠洲<rp>(</rp>
-                                    <rt>すず</rt>
-                                    <rp>)</rp>
-                                </ruby>市では震度6強の揺れに見舞われました。
+                                2024年元日の能登半島地震により、見附島が位置する石川県<ruby>珠洲<rp>(</rp><rt>すず</rt><rp>)</rp></ruby>市は震度6強の揺れに見舞われました。
                                 左の写真は震災前（2023年11月）、右の写真は震災後の姿（2025年8月）に撮影されたものです。
                                 スライダーを動かすことで、その変化を比較できます。
                             </p>
                             <p>
                                 石川県立大らで作るプロジェクトチームによると、体積の約2割が崩落しました<sup>[1]</sup>。
                                 しかし、これは「終わり」ではありません。崩れた斜面により面積は約8割増加<sup>[1]</sup>し、
-                                <span class="bg-accent/10 text-accent px-1 font-medium">崩れた斜面には新たな草木が芽吹き始めています</span>。
-                                島頂部の枯れ木が目立つ一方で、新たな発芽も見つかり<sup>[2]</sup>、森林の再生も進んでいます<sup>[3, 4]</sup>。
+                                崩れた斜面では日々草木の変化が起き始めています。
+                                <span class="bg-accent/10 text-accent px-1 font-medium">島頂部の枯れ木が目立つ一方で、新たな発芽も見つかり</span><sup>[2]</sup>、<span class="bg-accent/10 text-accent px-1 font-medium">森林の再生も進んでいます</span><sup>[3, 4]</sup>。
                             </p>
                         </div>
                         <div class="flex gap-4 pt-4">
@@ -376,16 +371,15 @@
                             </div>
                             <aside class="xl:w-1/3 w-full p-8 md:p-12 flex flex-col justify-between bg-white">
                                 <div>
-                                    <h2
-                                        class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-10">
+                                    <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-800 leading-snug mb-6">
                                         3Dシーンの構築
                                     </h2>
                                     <p
-                                        class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify mb-10">
+                                        class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify mb-6">
                                         タイムラプス動画に加え、空撮映像から3次元シーンを復元する技術 (3D Gaussian Splatting<sup>[4]</sup>)
                                         を使用し、見附島の姿を3Dデータとしても記録します。「デジタル復元」を目的とする類似の先行事例には2019年首里城火災後に開始された「みんなの首里城デジタル復元プロジェクト」<sup>[5]</sup>があります。本プロジェクトではドローンによる空撮動画を利用します。
                                     </p>
-                                    <div class="text-sm font-bold text-slate-700 flex flex-col gap-2">
+                                    <div class="text-sm font-bold text-slate-700 flex flex-col">
                                         <div class="flex items-center gap-2">
                                             <i data-lucide="rotate-3d" class="w-4 h-4 text-accent"></i>
                                             <span>作成した3Dシーン (外部サイト)</span>
@@ -401,7 +395,7 @@
                                     </div>
                                 </div>
 
-                                <div class="border-t border-slate-100 pt-6 mt-6">
+                                <div class="border-t border-slate-100 pt-6">
                                     <p class="text-sm font-bold text-slate-700 flex items-center gap-2 mb-2">
                                         <i data-lucide="camera" class="w-4 h-4 text-accent"></i>
                                         ドローン動画募集中
@@ -424,10 +418,10 @@
                     <i data-lucide="upload-cloud" class="w-8 h-8"></i>
                 </div>
 
-                <h2 class="text-3xl md:text-5xl font-serif text-slate-800 mb-8 leading-tight">
+                <p class="text-3xl md:text-5xl font-serif text-slate-800 mb-8 leading-tight">
                     あなたの写真が、<br>
                     タイムラプスの一部になります
-                </h2>
+                </p>
                 <p
                     class="text-slate-600 font-base leading-loose md:leading-loose text-base md:text-base text-justify mb-12">
                     いつ撮影されたものでも構いません。カメラやスマートフォンの中に眠る一枚が、
@@ -450,7 +444,7 @@
         <div class="container mx-auto px-6 max-w-8xl">
             <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
                 <div class="md:w-1/3 space-y-4">
-                    <h4 class="font-sans text-slate-500">見附島アーカイブ</h4>
+                    <p class="font-sans text-slate-500">見附島アーカイブ</p>
                     <div class="text-xs text-slate-500 leading-relaxed space-y-1">
                         <p>運営：大伏 仙泰<br>東京大学先端科学技術研究センター・珠洲市出身</p>
                     </div>
@@ -465,9 +459,9 @@
 
             <!-- 参考文献 -->
             <section class="max-w-8xl mx-auto reveal" aria-labelledby="references-heading">
-                <h3 id="references-heading" class="font-sans text-sm font-base text-slate-500 mb-2">
+                <p id="references-heading" class="font-sans text-sm font-base text-slate-500 mb-2">
                     参考文献
-                </h3>
+                </p>
                 <ul class="text-xs text-slate-400 leading-tight space-y-1">
                     <li>[1] 「見附島の森 回復の芽」北國新聞 朝刊 2025年10月12日付</li>
                     <li>[2] 「県立大、震災後初現地調査 樹木再生にお墨付き」北國新聞 朝刊 2025年9月2日付</li>
@@ -505,6 +499,7 @@
             <div
                 class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
                 <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
                     <a href="./terms.html#terms" class="hover:text-accent transition-colors">利用規約</a>
                     <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">プライバシーポリシー</a>
                     <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">お問い合わせ</a>
