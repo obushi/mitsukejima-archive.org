@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./tailwind.css">
-    <link rel="icon" type="image/png" href="./media/logo.svg">
+    <link rel="stylesheet" href="../tailwind.css">
+    <link rel="icon" type="image/png" href="../media/logo.svg">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -29,11 +29,11 @@
         </button>
         <a href="./index.html#condition" class="text-2xl text-slate-800 mobile-link active:text-accent">Mitsukejima today</a>
         <a href="./index.html#timelapse" class="text-2xl text-slate-800 mobile-link active:text-accent">Time-lapse</a>
-        <a href="./index.html#contribute" class="text-2xl text-slate-800 mobile-link active:text-accent">Join</a>
+        <a href="./index.html#contribute" class="text-2xl text-slate-800 mobile-link active:text-accent">Contribute</a>
 
         <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
             <i data-lucide="globe" class="w-6 h-6"></i>
-            <select onchange="if(this.value) window.location.href=this.value"
+            <select name="languages" onchange="if(this.value) window.location.href=this.value"
                 class="bg-transparent focus:outline-none cursor-pointer">
                 <option value="" disabled hidden selected>Language</option>
                 <option value="/">日本語</option>
@@ -47,7 +47,7 @@
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b bg-white/95 backdrop-blur-xl shadow-sm border-gray-200 group">
         <div class="container mx-auto px-6 py-2 md:py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-3 group/logo transition-opacity hover:opacity-80">
-                <img src="./media/logo.svg" alt="Mitsukejima Archive Logo"
+                <img src="../media/logo.svg" alt="Mitsukejima Archive Logo"
                     class="w-12 h-12 object-contain transition-all duration-300 drop-shadow-md drop-shadow-none">
                 <span class="font-sans tracking-widest text-lg font-normal drop-shadow-md text-black drop-shadow-none">
                     Mitsukejima Archive
@@ -61,13 +61,13 @@
                 <a href="./index.html#timelapse"
                     class="active:text-white active:text-accent transition-colors">Time-lapse</a>
                 <a href="./index.html#contribute"
-                    class="active:text-white active:text-accent transition-colors">Join</a>
+                    class="active:text-white active:text-accent transition-colors">Contribute</a>
             </nav>
 
             <!-- Language (Desktop) -->
             <div class="hidden md:flex items-center gap-1 drop-shadow-md text-gray-900 drop-shadow-none">
                 <i data-lucide="globe" class="w-4 h-4"></i>
-                <select onchange="if(this.value) window.location.href=this.value"
+                <select name="languages" onchange="if(this.value) window.location.href=this.value"
                     class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer appearance-none py-1 pr-2 pl-1 hover:text-accent hover:text-accent transition-colors">
                     <option value="" disabled hidden selected>Language</option>
                     <option value="/" class="text-black">日本語</option>
@@ -212,7 +212,7 @@
                 <div class="md:w-1/3 space-y-4">
                     <p class="font-sans text-slate-500">Mitsukejima Archive</p>
                     <div class="text-xs text-slate-500 leading-relaxed space-y-1">
-                        <p>Operated by: Noriyasu Obushi<br>The University of Tokyo, RCAST / From Suzu City</p>
+                        <p>Operated by: Noriyasu Obushi<br>RCAST, the University of Tokyo / From Suzu City</p>
                     </div>
                 </div>
                 <div class="md:w-1/2">
@@ -224,9 +224,9 @@
             </div>
 
             <div
-                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-sans">
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
+                    <a href="https://www.instagram.com/mitsukejima.archive"><img src="../media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
                     <a href="./terms.html#terms" class="hover:text-accent transition-colors">Terms of Use</a>
                     <a href="./terms.html#privacypolicy" class="hover:text-accent transition-colors">Privacy Policy</a>
                     <a href="https://forms.gle/LzWEciubm4qwvTuH8" class="hover:text-accent transition-colors">Contact</a>

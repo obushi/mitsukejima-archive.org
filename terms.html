@@ -33,7 +33,7 @@
 
         <div class="flex items-center gap-2 mt-8 text-xl font-bold text-slate-700">
             <i data-lucide="globe" class="w-6 h-6"></i>
-            <select onchange="if(this.value) window.location.href=this.value"
+            <select name="languages" onchange="if(this.value) window.location.href=this.value"
                 class="bg-transparent focus:outline-none cursor-pointer">
                 <option value="" disabled hidden selected>Language</option>
                 <option value="/">日本語</option>
@@ -67,7 +67,7 @@
             <!-- 言語選択 (PC用) -->
             <div class="hidden md:flex items-center gap-1 drop-shadow-md text-gray-900 drop-shadow-none">
                 <i data-lucide="globe" class="w-4 h-4"></i>
-                <select onchange="if(this.value) window.location.href=this.value"
+                <select name="languages" onchange="if(this.value) window.location.href=this.value"
                     class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer appearance-none py-1 pr-2 pl-1 hover:text-accent hover:text-accent transition-colors">
                     <option value="" disabled hidden selected>Language</option>
                     <option value="/" class="text-black">日本語</option>
@@ -218,7 +218,7 @@
             </div>
 
             <div
-                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-mono">
+                class="flex flex-col md:flex-row justify-between items-center pt-8 border-slate-200/60 text-[10px] text-slate-400 font-sans">
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="https://www.instagram.com/mitsukejima.archive"><img src="./media/ig_logo.svg" width="16em" height="16em" class="mr-6"></a>
                     <a href="./terms.html#terms" class="hover:text-accent transition-colors">利用規約</a>
