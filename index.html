@@ -96,8 +96,7 @@
             class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center text-center px-4">
             <!-- 背景動画 (Hero Section Only) -->
             <div class="absolute inset-0 z-0">
-                <video autoplay loop muted playsinline
-                    class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-75 grayscale-[0%]">
+                <video class="absolute inset-0 w-full h-full object-cover opacity-100 brightness-75 grayscale-[0%]"  autoplay muted loop playsinline preload="metadata">
                     <source src="./media/mitsukejima-overview.webm" type="video/webm">
                 </video>
                 <!-- グラデーションオーバーレイ -->
@@ -335,16 +334,14 @@
                                         id="viewer-container">
                                         <!-- 背景 (After/Current) -->
                                         <div class="absolute inset-0 w-full h-full z-0">
-                                            <video class="w-full h-full object-cover" autoplay muted loop playsinline
-                                                preload="metadata">
+                                            <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
                                                 <source src="./media/damage-after.webm" type="video/webm">
                                             </video>
                                         </div>
                                         <!-- 前景 (Before/Past) -->
                                         <div class="absolute inset-0 w-[50%] h-full overflow-hidden border-r border-white/80 z-10"
                                             id="viewer-overlay">
-                                            <video id="viewer-image-before" class="w-full h-full max-w-none" autoplay
-                                                muted loop playsinline preload="metadata">
+                                            <video id="viewer-image-before" class="w-full h-full max-w-none" autoplay muted loop playsinline preload="metadata">
                                                 <source src="./media/damage-before.webm" type="video/webm">
                                             </video>
                                         </div>
